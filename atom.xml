@@ -6,7 +6,7 @@
   <link href="https://yyc001207.github.io/atom.xml" rel="self"/>
   
   <link href="https://yyc001207.github.io/"/>
-  <updated>2022-10-24T11:44:10.543Z</updated>
+  <updated>2022-10-24T12:45:30.523Z</updated>
   <id>https://yyc001207.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>vue-admin</title>
+    <link href="https://yyc001207.github.io/2022/10/24/vue-admin/"/>
+    <id>https://yyc001207.github.io/2022/10/24/vue-admin/</id>
+    <published>2022-10-24T12:43:29.000Z</published>
+    <updated>2022-10-24T12:45:30.523Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;day1&quot; tabindex=&quot;-1&quot;&gt;day1&lt;/h1&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vue-admin" scheme="https://yyc001207.github.io/tags/vue-admin/"/>
+    
+    <category term="vue.js" scheme="https://yyc001207.github.io/tags/vue-js/"/>
+    
+    <category term="javascript" scheme="https://yyc001207.github.io/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>test</title>
     <link href="https://yyc001207.github.io/2022/10/24/test/"/>
     <id>https://yyc001207.github.io/2022/10/24/test/</id>
     <published>2022-10-24T11:42:44.000Z</published>
-    <updated>2022-10-24T11:44:10.543Z</updated>
+    <updated>2022-10-24T12:43:53.427Z</updated>
     
     
       
@@ -36,9 +64,7 @@
     
     
     
-    <category term="vue" scheme="https://yyc001207.github.io/tags/vue/"/>
-    
-    <category term="vue-admin" scheme="https://yyc001207.github.io/tags/vue-admin/"/>
+    <category term="vue.js" scheme="https://yyc001207.github.io/tags/vue-js/"/>
     
   </entry>
   
