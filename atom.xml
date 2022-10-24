@@ -6,7 +6,7 @@
   <link href="https://yyc001207.github.io/atom.xml" rel="self"/>
   
   <link href="https://yyc001207.github.io/"/>
-  <updated>2022-10-24T07:50:10.753Z</updated>
+  <updated>2022-10-24T11:44:10.543Z</updated>
   <id>https://yyc001207.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://yyc001207.github.io/2022/10/24/test/"/>
+    <id>https://yyc001207.github.io/2022/10/24/test/</id>
+    <published>2022-10-24T11:42:44.000Z</published>
+    <updated>2022-10-24T11:44:10.543Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;%E7%AC%94%E8%AE%B0&quot; tabindex=&quot;-1&quot;&gt;笔记&lt;/h1&gt;
+&lt;h2 id=&quot;%E8%84%9A%E6%89%8B%E6%9E%B6%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="vue" scheme="https://yyc001207.github.io/tags/vue/"/>
+    
+    <category term="vue-admin" scheme="https://yyc001207.github.io/tags/vue-admin/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
