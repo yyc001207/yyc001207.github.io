@@ -6,7 +6,7 @@
   <link href="https://yyc001207.github.io/atom.xml" rel="self"/>
   
   <link href="https://yyc001207.github.io/"/>
-  <updated>2022-10-24T12:45:30.523Z</updated>
+  <updated>2022-10-25T02:38:00.579Z</updated>
   <id>https://yyc001207.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>promise</title>
+    <link href="https://yyc001207.github.io/2022/10/25/promise/"/>
+    <id>https://yyc001207.github.io/2022/10/25/promise/</id>
+    <published>2022-10-25T02:29:25.000Z</published>
+    <updated>2022-10-25T02:38:00.579Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;# 笔记&lt;/p&gt;
+&lt;p&gt;# 课件和笔记都是摘自尚硅谷的promise相关教程&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="javascript" scheme="https://yyc001207.github.io/tags/javascript/"/>
+    
+    <category term="promise" scheme="https://yyc001207.github.io/tags/promise/"/>
+    
+    <category term="异步编程" scheme="https://yyc001207.github.io/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>vue-admin</title>
