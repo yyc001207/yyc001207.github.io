@@ -6,7 +6,7 @@
   <link href="https://yyc001207.github.io/atom.xml" rel="self"/>
   
   <link href="https://yyc001207.github.io/"/>
-  <updated>2022-10-25T02:38:00.579Z</updated>
+  <updated>2022-10-26T03:55:01.353Z</updated>
   <id>https://yyc001207.github.io/</id>
   
   <author>
@@ -17,83 +17,62 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>promise</title>
-    <link href="https://yyc001207.github.io/2022/10/25/promise/"/>
-    <id>https://yyc001207.github.io/2022/10/25/promise/</id>
-    <published>2022-10-25T02:29:25.000Z</published>
-    <updated>2022-10-25T02:38:00.579Z</updated>
+    <title>async与awiat</title>
+    <link href="https://yyc001207.github.io/2022/10/26/async%E4%B8%8Eawiat/"/>
+    <id>https://yyc001207.github.io/2022/10/26/async%E4%B8%8Eawiat/</id>
+    <published>2022-10-26T02:04:15.000Z</published>
+    <updated>2022-10-26T03:55:01.353Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;# 笔记&lt;/p&gt;
-&lt;p&gt;# 课件和笔记都是摘自尚硅谷的promise相关教程&lt;/p&gt;
-&lt;p&gt;&lt;a</summary>
+    <summary type="html">&lt;p&gt;&lt;strong&gt;async与awiat是异步编程的最终解决方案&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1.async%E5%87%BD%E6%95%B0&quot; tabindex=&quot;-1&quot;&gt;1.async函数&lt;/h2&gt;
+&lt;p&gt;用于声明异步函数，返回值为一个</summary>
         
       
     
     
     
+    <category term="前端" scheme="https://yyc001207.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="promise" scheme="https://yyc001207.github.io/categories/%E5%89%8D%E7%AB%AF/promise/"/>
+    
+    <category term="async" scheme="https://yyc001207.github.io/categories/%E5%89%8D%E7%AB%AF/promise/async/"/>
+    
+    <category term="await" scheme="https://yyc001207.github.io/categories/%E5%89%8D%E7%AB%AF/promise/async/await/"/>
+    
+    
+    <category term="async" scheme="https://yyc001207.github.io/tags/async/"/>
+    
+    <category term="awiat" scheme="https://yyc001207.github.io/tags/awiat/"/>
     
     <category term="promise" scheme="https://yyc001207.github.io/tags/promise/"/>
-    
-    <category term="javascript" scheme="https://yyc001207.github.io/tags/javascript/"/>
-    
-    <category term="异步编程" scheme="https://yyc001207.github.io/tags/%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>vue-admin</title>
-    <link href="https://yyc001207.github.io/2022/10/24/vue-admin/"/>
-    <id>https://yyc001207.github.io/2022/10/24/vue-admin/</id>
-    <published>2022-10-24T12:43:29.000Z</published>
-    <updated>2022-10-24T12:45:30.523Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;day1&quot; tabindex=&quot;-1&quot;&gt;day1&lt;/h1&gt;
-&lt;h2</summary>
-        
-      
-    
-    
-    
-    
-    <category term="vue.js" scheme="https://yyc001207.github.io/tags/vue-js/"/>
-    
-    <category term="javascript" scheme="https://yyc001207.github.io/tags/javascript/"/>
-    
-    <category term="vue-admin" scheme="https://yyc001207.github.io/tags/vue-admin/"/>
     
   </entry>
   
   <entry>
     <title>test</title>
-    <link href="https://yyc001207.github.io/2022/10/24/test/"/>
-    <id>https://yyc001207.github.io/2022/10/24/test/</id>
-    <published>2022-10-24T11:42:44.000Z</published>
-    <updated>2022-10-24T12:43:53.427Z</updated>
+    <link href="https://yyc001207.github.io/2022/10/26/test/"/>
+    <id>https://yyc001207.github.io/2022/10/26/test/</id>
+    <published>2022-10-26T01:49:46.000Z</published>
+    <updated>2022-10-26T02:01:27.374Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;%E7%AC%94%E8%AE%B0&quot; tabindex=&quot;-1&quot;&gt;笔记&lt;/h1&gt;
-&lt;h2 id=&quot;%E8%84%9A%E6%89%8B%E6%9E%B6%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84&quot;</summary>
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;aaa.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/katex/dist/katex.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot;</summary>
         
       
     
     
     
-    
-    <category term="vue.js" scheme="https://yyc001207.github.io/tags/vue-js/"/>
     
   </entry>
   
