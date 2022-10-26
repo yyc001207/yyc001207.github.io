@@ -132,6 +132,17 @@
   
   <li class="hide-on-med-and-down nav-item">
     
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
@@ -221,6 +232,17 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
 		</a>
           
         </li>
@@ -651,10 +673,13 @@
 </div>
 
 <script src="/libs/valine/av-min.js"></script>
-<script src="https://unpkg.com/valine/dist/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
+        master: '7a4da7ea7879d4a3160ba95303a323c0',
+        tagMeta: ["博主", "小伙伴", "访客"],     //标识字段名
+        friends: [],
         appId: 'vwY8mHSedQvYY7Rmn1ZoFoFK-gzGzoHsz',
         appKey: 'xDxKXflIj562BXSn5rAHcbJd',
         notify: '' === 'true',
