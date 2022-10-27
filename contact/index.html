@@ -132,17 +132,6 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
@@ -232,17 +221,6 @@
 			    <i class="fa-fw fas fa-user-circle"></i>
 			
 			关于
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
 		</a>
           
         </li>
@@ -677,9 +655,10 @@
 <script>
     new Valine({
         el: '#vcomments',
-        master: '7a4da7ea7879d4a3160ba95303a323c0',
+        master: 'acfa38d4b7c08cccd982d9c0c94092cc',
         tagMeta: ["博主", "小伙伴", "访客"],     //标识字段名
         friends: [],
+        metaPlaceholder: {"nick":"昵称/QQ号","mail":"邮箱（完全保密）"},
         appId: 'vwY8mHSedQvYY7Rmn1ZoFoFK-gzGzoHsz',
         appKey: 'xDxKXflIj562BXSn5rAHcbJd',
         notify: '' === 'true',
@@ -690,6 +669,7 @@
         lang: 'zh-cn',
         placeholder: '昵称填写qq可以显示qq头像和昵称哦~',
         enableQQ: true,
+        avatarForce: true,
         emojiCDN: '//i0.hdslb.com/bfs/emote/',
         // 表情title和图片映射
         emojiMaps: {
