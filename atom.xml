@@ -6,7 +6,7 @@
   <link href="https://yyc001207.github.io/atom.xml" rel="self"/>
   
   <link href="https://yyc001207.github.io/"/>
-  <updated>2022-10-27T03:14:44.857Z</updated>
+  <updated>2022-10-27T04:35:19.964Z</updated>
   <id>https://yyc001207.github.io/</id>
   
   <author>
@@ -21,15 +21,16 @@
     <link href="https://yyc001207.github.io/2022/10/27/axios/"/>
     <id>https://yyc001207.github.io/2022/10/27/axios/</id>
     <published>2022-10-27T01:48:55.000Z</published>
-    <updated>2022-10-27T03:14:44.857Z</updated>
+    <updated>2022-10-27T04:35:19.964Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;axios-%E6%98%AF%E4%BB%80%E4%B9%88%3F&quot; tabindex=&quot;-1&quot;&gt;Axios 是什么?&lt;/h2&gt;
-&lt;p&gt;Axios 是一个基于 &lt;em&gt;&lt;a</summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://github.com/yyc001207/axios&quot;&gt;源码地址&lt;/a&gt;&lt;/p&gt;
+&lt;h2 tabindex=&quot;-1&quot;&gt;&lt;span id=&quot;axios-是什么&quot;&gt;Axios 是什么?&lt;/span&gt;&lt;/h2&gt;
+&lt;p&gt;Axios 是一个基于</summary>
         
       
     
@@ -50,8 +51,8 @@
   
   <entry>
     <title>async与awiat</title>
-    <link href="https://yyc001207.github.io/2022/10/26/async%E4%B8%8Eawiat/"/>
-    <id>https://yyc001207.github.io/2022/10/26/async%E4%B8%8Eawiat/</id>
+    <link href="https://yyc001207.github.io/2022/10/26/async-yu-awiat/"/>
+    <id>https://yyc001207.github.io/2022/10/26/async-yu-awiat/</id>
     <published>2022-10-26T02:04:15.000Z</published>
     <updated>2022-10-27T01:51:20.231Z</updated>
     
@@ -61,7 +62,7 @@
         
         
     <summary type="html">&lt;p&gt;&lt;strong&gt;async与awiat是异步编程的最终解决方案&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;1.async%E5%87%BD%E6%95%B0&quot; tabindex=&quot;-1&quot;&gt;1.async函数&lt;/h2&gt;
+&lt;h2 tabindex=&quot;-1&quot;&gt;&lt;span id=&quot;1async函数&quot;&gt;1.async函数&lt;/span&gt;&lt;/h2&gt;
 &lt;p&gt;用于声明异步函数，返回值为一个</summary>
         
       
@@ -97,7 +98,7 @@
       
         
         
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;aaa.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;aaa.jpg&quot; alt&gt;&lt;/p&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;//cdn.jsdelivr.net/npm/katex/dist/katex.min.css&quot;&gt;
 &lt;link rel=&quot;stylesheet&quot;</summary>
         
