@@ -370,7 +370,7 @@
 
     <script>
         // 每天切换 banner 图.  Switch banner image every day. 
-        var bannerUrl = "/medias/banner/" + ('0' + Math.floor(Math.random() * 8)) + '.jpg';
+        var bannerUrl = "/medias/banner/" +  Math.floor(Math.random() * 7) + '.jpg';
         $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
     </script>
     
@@ -498,7 +498,7 @@
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="async与awiat">
+                                <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="async与awiat">
                                 
                                 <span class="card-title">async与awiat</span>
                             </div>
@@ -573,7 +573,7 @@
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="axios">
+                                <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="axios">
                                 
                                 <span class="card-title">axios</span>
                             </div>
@@ -629,6 +629,60 @@
 
 
     <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="8667967604"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.3'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
     
 
     <div class="container row center-align"
