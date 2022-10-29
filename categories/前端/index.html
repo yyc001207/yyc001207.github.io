@@ -337,44 +337,43 @@
         <div class="brand">
             <div class="title center-align">
                 
-                学无止境
-                
+                    学无止境
+                        
             </div>
 
             <div class="description center-align">
                 
-                <span id="subtitle"></span>
-                <script src="/libs/typed/typed.js"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
+                    <span id="subtitle"></span>
+                    <script src="/libs/typed/typed.js"></script>
+                    <script>
+                        var typed = new Typed("#subtitle", {
+                            strings: [ 
                             
                                 "从来没有真正的绝境, 只有心灵的迷途",
                             
                                 "Never really desperate, only the lost of the soul",
                             
                         ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 50,
-                        showCursor: true
+                            startDelay: 300,
+                            typeSpeed: 100,
+                            loop: true,
+                            backSpeed: 50,
+                            showCursor: true
                     });
-                </script>
-                
+                    </script>
+                    
             </div>
         </div>
     </div>
 </div>
 
 
-<script>
-    // 每天切换 banner 图.  Switch banner image every day.
-    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
-    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
-</script>
-
-
+    <script>
+        // 每天切换 banner 图.  Switch banner image every day. 
+        var bannerUrl = "/medias/banner/" + ('0' + Math.floor(Math.random() * 8)) + '.jpg';
+        $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+    </script>
+    
     </div>
 </div>
 
@@ -454,7 +453,7 @@
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="async与awiat">
+                            <img src="/medias/featureimages/24.jpg" class="responsive-img" alt="async与awiat">
                             
                             <span class="card-title">async与awiat</span>
                         </div>
@@ -520,7 +519,7 @@
                         <div class="card-image tag-image">
                             
                             
-                            <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="axios">
+                            <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="axios">
                             
                             <span class="card-title">axios</span>
                         </div>
