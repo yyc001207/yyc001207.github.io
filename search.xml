@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>js高级基础部分</title>
+      <link href="/2022/10/31/js-gao-ji-ji-chu-bu-fen/"/>
+      <url>/2022/10/31/js-gao-ji-ji-chu-bu-fen/</url>
+      
+        <content type="html"><![CDATA[<p><em><strong>基于尚硅谷的<a href="https://www.bilibili.com/video/BV14s411E7qf/?p=1&vd_source=5b3402369f2047c6a7873145482528ad">尚硅谷JavaScript高级教程</a>提供笔记撰写，加入一些个人理解</strong></em></p><p><a href="https://github.com/yyc001207/javascript-senior">github源码</a></p><h2 id="数据类型的分类和判断"><a href="#数据类型的分类和判断" class="headerlink" title="数据类型的分类和判断"></a>数据类型的分类和判断</h2><h3 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h3><p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/pageImage/js%E9%AB%98%E7%BA%A7/20221031131128.png"></p><h3 id="基本-值-类型"><a href="#基本-值-类型" class="headerlink" title="基本(值)类型"></a>基本(值)类型</h3><ul><li>Number —– 任意数值 ——– typeof</li><li>String —– 任意字符串 —— typeof</li><li>Boolean —- true&#x2F;false —– typeof</li><li>undefined — undefined —– typeof&#x2F;&#x3D;&#x3D;&#x3D;</li><li>null ——– null ———- &#x3D;&#x3D;&#x3D;</li></ul><h3 id="对象-引用-类型"><a href="#对象-引用-类型" class="headerlink" title="对象(引用)类型"></a>对象(引用)类型</h3><ul><li>Object –<em>任意对象</em>— typeof&#x2F;instanceof</li><li>Array —<em>特别的对象类型(下标&#x2F;内部数据有序)</em>— instanceof</li><li>Function –<em>特别的对象类型(可执行)</em>– typeo</li></ul><h3 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h3><ul><li><p>typeof:</p><p><font color=#ff2a68>typeof返回值是数据类型的字符串表达</font></p><p>例如：</p><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">3</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> a<span class="token operator">===</span><span class="token string">'number'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//输出true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>可以区别: 数值, 字符串, 布尔值, undefined, function</p><p>不能区别: null与对象, 一般对象与数组</p><p>typeof判断null为object</p></li><li><p>instanceof</p><p>专门用来判断对象数据的类型: Object, Array与Function</p></li><li><p>&#x3D;&#x3D;&#x3D;</p><p>可以判断: undefined和null</p><p>简单来说，&#x3D;&#x3D;&#x3D;只能判断出只有一个值的数据类型</p></li></ul><h3 id="1-undefined与null的区别"><a href="#1-undefined与null的区别" class="headerlink" title="1. undefined与null的区别?"></a>1. undefined与null的区别?</h3><p>  undefined代表没有赋值</p><p>  null代表赋值了, 只是值为null</p><h3 id="2-什么时候给变量赋值为null呢"><a href="#2-什么时候给变量赋值为null呢" class="headerlink" title="2. 什么时候给变量赋值为null呢?"></a>2. 什么时候给变量赋值为null呢?</h3><p>  var a &#x3D; null  a将指向一个对象, 但对象此时还没有确定</p><p>  a &#x3D; null  让a指向的对象成为垃圾对象</p><h3 id="3-严格区别变量类型与数据类型"><a href="#3-严格区别变量类型与数据类型" class="headerlink" title="3. 严格区别变量类型与数据类型?"></a>3. 严格区别变量类型与数据类型?</h3><p>  js的变量本身是没有类型的, 变量的类型实际上是变量内存中数据的类型</p><p>  变量类型:</p><p>   基本类型: 保存基本类型数据的变量</p><p>   引用类型: 保存对象地址值的变量</p><p>  数据对象</p><p>   基本类型</p><p>   对象类型</p><h2 id="数据-变量-内存的理解"><a href="#数据-变量-内存的理解" class="headerlink" title="数据,变量, 内存的理解"></a>数据,变量, 内存的理解</h2><h3 id="主要问题-1"><a href="#主要问题-1" class="headerlink" title="主要问题"></a>主要问题</h3><p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images%2FpageImage%2Fjs%E9%AB%98%E7%BA%A7%2F20221031131458.png"></p><ul><li>什么是数据?<ul><li>在内存中可读的, 可传递的保存了特定信息的’东东’</li><li>一切皆数据, 函数也是数据</li><li>在内存中的所有操作的目标: 数据</li></ul></li><li>什么是变量?<ul><li>在程序运行过程中它的值是允许改变的量</li><li>一个变量对应一块小内存, 它的值保存在此内存中</li></ul></li><li>什么是内存?<ul><li>内存条通电后产生的存储空间(临时的)</li><li>一块内存包含2个方面的数据<ul><li>内部存储的数据</li><li>地址值数据</li></ul></li><li>内存空间的分类<ul><li>栈空间: 全局变量和局部变量</li><li>堆空间: 对象</li></ul></li></ul></li><li>内存,数据, 变量三者之间的关系<ul><li>内存是容器, 用来存储不同数据</li><li>变量是内存的标识, 通过变量我们可以操作(读&#x2F;写)内存中的数据</li></ul></li></ul><h2 id="对象的理解和使用"><a href="#对象的理解和使用" class="headerlink" title="对象的理解和使用"></a>对象的理解和使用</h2><h3 id="主要问题-2"><a href="#主要问题-2" class="headerlink" title="主要问题"></a>主要问题</h3><p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images%2FpageImage%2Fjs%E9%AB%98%E7%BA%A7%2F20221031131747.png"></p><ul><li><p>什么是对象?</p><ul><li>多个数据(属性)的集合</li><li>用来保存多个数据(属性)的容器</li></ul></li><li><p>属性组成:</p><ul><li>属性名 : 字符串(标识)</li><li>属性值 : 任意类型</li></ul></li><li><p>属性的分类:</p><ul><li>一般 : 属性值不是function  描述对象的状态</li><li>方法 : 属性值为function的属性  描述对象的行为</li></ul></li><li><p>特别的对象</p><ul><li>数组: 属性名是0,1,2,3之类的索引</li><li>函数: 可以执行的</li></ul></li><li><p>如何操作内部属性(方法)</p><ul><li><p>.属性名</p></li><li></li></ul></li></ul><h2 id="函数的理解和使用"><a href="#函数的理解和使用" class="headerlink" title="函数的理解和使用"></a>函数的理解和使用</h2><h3 id="主要问题-3"><a href="#主要问题-3" class="headerlink" title="主要问题"></a>主要问题</h3><p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images%2FpageImage%2Fjs%E9%AB%98%E7%BA%A7%2F20221031131839.png"></p><ul><li><p>什么是函数?</p><ul><li>用来实现特定功能的, n条语句的封装体</li><li>只有函数类型的数据是可以执行的, 其它的都不可以</li></ul></li><li><p>为什么要用函数?</p><ul><li>提高复用性</li><li>便于阅读交流</li></ul></li><li><p>函数也是对象</p><ul><li>instanceof Object&#x3D;&#x3D;&#x3D;true</li><li>函数有属性: prototype</li><li>函数有方法: call()&#x2F;apply()</li><li>可以添加新的属性&#x2F;方法</li></ul></li><li><p>函数的3种不同角色</p><ul><li>一般函数 : 直接调用</li><li>构造函数 : 通过new调用</li><li>对象 : 通过.调用内部的属性&#x2F;方法</li></ul></li><li><p>函数中的this</p><ul><li>显式指定谁: obj.xxx()</li><li>通过call&#x2F;apply指定谁调用: xxx.call(obj)</li><li>不指定谁调用: xxx()  : window</li><li>回调函数: 看背后是通过谁来调用的: window&#x2F;其它</li></ul></li><li><p>匿名函数自调用:</p><pre class="line-numbers language-none"><code class="language-none">(function(w, obj)&#123;  &#x2F;&#x2F;实现代码&#125;)(window, obj)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><ul><li>专业术语为: IIFE (Immediately Invoked Function Expression) 立即调用函数表达式</li></ul><p>  </p></li><li><p>回调函数的理解</p><ul><li>什么函数才是回调函数?<ul><li>你定义的</li><li>你没有调用</li><li>但它最终执行了(在一定条件下或某个时刻)</li></ul></li><li>常用的回调函数<ul><li>dom事件回调函数</li><li>定时器回调函数</li><li>ajax请求回调函数(后面讲解)</li><li>生命周期回调函数(后面讲解)</li></ul></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+          <category> js高级 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js高级 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>async与awiat</title>
       <link href="/2022/10/28/async-yu-awiat/"/>
       <url>/2022/10/28/async-yu-awiat/</url>

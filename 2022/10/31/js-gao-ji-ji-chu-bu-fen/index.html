@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="contact, javascript,vue,前端">
-    <meta name="description" content="随笔、日志、技术分享、个人作品">
+    <meta name="keywords" content="js高级,前端技术">
+    <meta name="description" content="js高级技术之基础总结">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>contact | Sakura</title>
+    <title>js高级基础部分 | Sakura</title>
     <link rel="icon" type="image/png" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/favicon.png">
     
 
@@ -333,87 +333,427 @@
 
 </header>
 
-    <div class="bg-cover pd-header about-cover">
-    <div class="container">
-    <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                    学无止境
-                        
-            </div>
+    
 
-            <div class="description center-align">
-                
-                    <span id="subtitle"></span>
-                    <script src="/libs/typed/typed.js"></script>
-                    <script>
-                        var typed = new Typed("#subtitle", {
-                            strings: [ 
-                            
-                                "从来没有真正的绝境, 只有心灵的迷途",
-                            
-                                "Never really desperate, only the lost of the soul",
-                            
-                        ],
-                            startDelay: 300,
-                            typeSpeed: 100,
-                            loop: true,
-                            backSpeed: 50,
-                            showCursor: true
-                    });
-                    </script>
-                    
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">js高级基础部分</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-    <script>
-        // 每天切换 banner 图.  Switch banner image every day. 
-        // 
-        let index = Math.floor(Math.random() * 8)
-        
-        // var bannerUrl = "/medias/banner/" + (Math.floor(Math.random() * 7)) + '.jpg';
-        $('.bg-cover').css('background-image', `url(https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/banner/0${index}.jpg)`);
-    </script>
+
+
+<main class="post-container content">
+
     
-    </div>
-</div>
-<style>
-    #send{
-        margin-bottom: 10px;
-        width: 49%;
-        background-color: #0ba360;
-    }
-    #clear{
-        margin-bottom: 10px;
-        width: 49%;
-        background-color: #e7c65c;
-    }
-    p{
-        text-align: left;
-    }
-</style>
-<main class="content">
-    <div id="contact" class="container chip-container">
-        <div class="card">
-            <div class="card-content">
-                <div class="tag-title center-align">
-                    <i class="fas fa-comments"></i>&nbsp;&nbsp;留言板
+    <div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/js%E9%AB%98%E7%BA%A7/">
+                                <span class="chip bg-color">js高级</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
+                            </a>
+                        
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/js%E9%AB%98%E7%BA%A7/" class="post-category">
+                                js高级
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-10-31
                 </div>
                 
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-10-31
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    1.1k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    4 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
-            <!--valine评论弹幕-->
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/css/prism.min.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><em><strong>基于尚硅谷的<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14s411E7qf/?p=1&vd_source=5b3402369f2047c6a7873145482528ad">尚硅谷JavaScript高级教程</a>提供笔记撰写，加入一些个人理解</strong></em></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/yyc001207/javascript-senior">github源码</a></p>
+<h2 id="数据类型的分类和判断"><a href="#数据类型的分类和判断" class="headerlink" title="数据类型的分类和判断"></a>数据类型的分类和判断</h2><h3 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h3><p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/pageImage/js%E9%AB%98%E7%BA%A7/20221031131128.png"></p>
+<h3 id="基本-值-类型"><a href="#基本-值-类型" class="headerlink" title="基本(值)类型"></a>基本(值)类型</h3><ul>
+<li>Number —– 任意数值 ——– typeof</li>
+<li>String —– 任意字符串 —— typeof</li>
+<li>Boolean —- true&#x2F;false —– typeof</li>
+<li>undefined — undefined —– typeof&#x2F;&#x3D;&#x3D;&#x3D;</li>
+<li>null ——– null ———- &#x3D;&#x3D;&#x3D;</li>
+</ul>
+<h3 id="对象-引用-类型"><a href="#对象-引用-类型" class="headerlink" title="对象(引用)类型"></a>对象(引用)类型</h3><ul>
+<li>Object –<em>任意对象</em>— typeof&#x2F;instanceof</li>
+<li>Array —<em>特别的对象类型(下标&#x2F;内部数据有序)</em>— instanceof</li>
+<li>Function –<em>特别的对象类型(可执行)</em>– typeo</li>
+</ul>
+<h3 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h3><ul>
+<li><p>typeof:</p>
+<p><font color=#ff2a68>typeof返回值是数据类型的字符串表达</font></p>
+<p>例如：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token number">3</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> a<span class="token operator">===</span><span class="token string">'number'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//输出true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>可以区别: 数值, 字符串, 布尔值, undefined, function</p>
+<p>不能区别: null与对象, 一般对象与数组</p>
+<p>typeof判断null为object</p>
+</li>
+<li><p>instanceof</p>
+<p>专门用来判断对象数据的类型: Object, Array与Function</p>
+</li>
+<li><p>&#x3D;&#x3D;&#x3D;</p>
+<p>可以判断: undefined和null</p>
+<p>简单来说，&#x3D;&#x3D;&#x3D;只能判断出只有一个值的数据类型</p>
+</li>
+</ul>
+<h3 id="1-undefined与null的区别"><a href="#1-undefined与null的区别" class="headerlink" title="1. undefined与null的区别?"></a>1. undefined与null的区别?</h3><p>  undefined代表没有赋值</p>
+<p>  null代表赋值了, 只是值为null</p>
+<h3 id="2-什么时候给变量赋值为null呢"><a href="#2-什么时候给变量赋值为null呢" class="headerlink" title="2. 什么时候给变量赋值为null呢?"></a>2. 什么时候给变量赋值为null呢?</h3><p>  var a &#x3D; null  a将指向一个对象, 但对象此时还没有确定</p>
+<p>  a &#x3D; null  让a指向的对象成为垃圾对象</p>
+<h3 id="3-严格区别变量类型与数据类型"><a href="#3-严格区别变量类型与数据类型" class="headerlink" title="3. 严格区别变量类型与数据类型?"></a>3. 严格区别变量类型与数据类型?</h3><p>  js的变量本身是没有类型的, 变量的类型实际上是变量内存中数据的类型</p>
+<p>  变量类型:</p>
+<p>   基本类型: 保存基本类型数据的变量</p>
+<p>   引用类型: 保存对象地址值的变量</p>
+<p>  数据对象</p>
+<p>   基本类型</p>
+<p>   对象类型</p>
+<h2 id="数据-变量-内存的理解"><a href="#数据-变量-内存的理解" class="headerlink" title="数据,变量, 内存的理解"></a>数据,变量, 内存的理解</h2><h3 id="主要问题-1"><a href="#主要问题-1" class="headerlink" title="主要问题"></a>主要问题</h3><p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images%2FpageImage%2Fjs%E9%AB%98%E7%BA%A7%2F20221031131458.png"></p>
+<ul>
+<li>什么是数据?<ul>
+<li>在内存中可读的, 可传递的保存了特定信息的’东东’</li>
+<li>一切皆数据, 函数也是数据</li>
+<li>在内存中的所有操作的目标: 数据</li>
+</ul>
+</li>
+<li>什么是变量?<ul>
+<li>在程序运行过程中它的值是允许改变的量</li>
+<li>一个变量对应一块小内存, 它的值保存在此内存中</li>
+</ul>
+</li>
+<li>什么是内存?<ul>
+<li>内存条通电后产生的存储空间(临时的)</li>
+<li>一块内存包含2个方面的数据<ul>
+<li>内部存储的数据</li>
+<li>地址值数据</li>
+</ul>
+</li>
+<li>内存空间的分类<ul>
+<li>栈空间: 全局变量和局部变量</li>
+<li>堆空间: 对象</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>内存,数据, 变量三者之间的关系<ul>
+<li>内存是容器, 用来存储不同数据</li>
+<li>变量是内存的标识, 通过变量我们可以操作(读&#x2F;写)内存中的数据</li>
+</ul>
+</li>
+</ul>
+<h2 id="对象的理解和使用"><a href="#对象的理解和使用" class="headerlink" title="对象的理解和使用"></a>对象的理解和使用</h2><h3 id="主要问题-2"><a href="#主要问题-2" class="headerlink" title="主要问题"></a>主要问题</h3><p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images%2FpageImage%2Fjs%E9%AB%98%E7%BA%A7%2F20221031131747.png"></p>
+<ul>
+<li><p>什么是对象?</p>
+<ul>
+<li>多个数据(属性)的集合</li>
+<li>用来保存多个数据(属性)的容器</li>
+</ul>
+</li>
+<li><p>属性组成:</p>
+<ul>
+<li>属性名 : 字符串(标识)</li>
+<li>属性值 : 任意类型</li>
+</ul>
+</li>
+<li><p>属性的分类:</p>
+<ul>
+<li>一般 : 属性值不是function  描述对象的状态</li>
+<li>方法 : 属性值为function的属性  描述对象的行为</li>
+</ul>
+</li>
+<li><p>特别的对象</p>
+<ul>
+<li>数组: 属性名是0,1,2,3之类的索引</li>
+<li>函数: 可以执行的</li>
+</ul>
+</li>
+<li><p>如何操作内部属性(方法)</p>
+<ul>
+<li><p>.属性名</p>
+</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<h2 id="函数的理解和使用"><a href="#函数的理解和使用" class="headerlink" title="函数的理解和使用"></a>函数的理解和使用</h2><h3 id="主要问题-3"><a href="#主要问题-3" class="headerlink" title="主要问题"></a>主要问题</h3><p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images%2FpageImage%2Fjs%E9%AB%98%E7%BA%A7%2F20221031131839.png"></p>
+<ul>
+<li><p>什么是函数?</p>
+<ul>
+<li>用来实现特定功能的, n条语句的封装体</li>
+<li>只有函数类型的数据是可以执行的, 其它的都不可以</li>
+</ul>
+</li>
+<li><p>为什么要用函数?</p>
+<ul>
+<li>提高复用性</li>
+<li>便于阅读交流</li>
+</ul>
+</li>
+<li><p>函数也是对象</p>
+<ul>
+<li>instanceof Object&#x3D;&#x3D;&#x3D;true</li>
+<li>函数有属性: prototype</li>
+<li>函数有方法: call()&#x2F;apply()</li>
+<li>可以添加新的属性&#x2F;方法</li>
+</ul>
+</li>
+<li><p>函数的3种不同角色</p>
+<ul>
+<li>一般函数 : 直接调用</li>
+<li>构造函数 : 通过new调用</li>
+<li>对象 : 通过.调用内部的属性&#x2F;方法</li>
+</ul>
+</li>
+<li><p>函数中的this</p>
+<ul>
+<li>显式指定谁: obj.xxx()</li>
+<li>通过call&#x2F;apply指定谁调用: xxx.call(obj)</li>
+<li>不指定谁调用: xxx()  : window</li>
+<li>回调函数: 看背后是通过谁来调用的: window&#x2F;其它</li>
+</ul>
+</li>
+<li><p>匿名函数自调用:</p>
+<pre class="line-numbers language-none"><code class="language-none">(function(w, obj)&#123;
+  &#x2F;&#x2F;实现代码
+&#125;)(window, obj)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>专业术语为: IIFE (Immediately Invoked Function Expression) 立即调用函数表达式</li>
+</ul>
+<p>						  </p>
+</li>
+<li><p>回调函数的理解</p>
+<ul>
+<li>什么函数才是回调函数?<ul>
+<li>你定义的</li>
+<li>你没有调用</li>
+<li>但它最终执行了(在一定条件下或某个时刻)</li>
+</ul>
+</li>
+<li>常用的回调函数<ul>
+<li>dom事件回调函数</li>
+<li>定时器回调函数</li>
+<li>ajax请求回调函数(后面讲解)</li>
+<li>生命周期回调函数(后面讲解)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                
+            </div>
+            <hr/>
+
             
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Sakura Caslana</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://yyc001207.github.io/2022/10/31/js-gao-ji-ji-chu-bu-fen/">https://yyc001207.github.io/2022/10/31/js-gao-ji-ji-chu-bu-fen/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Sakura Caslana</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/js%E9%AB%98%E7%BA%A7/">
+                                    <span class="chip bg-color">js高级</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
             
         </div>
+    </div>
 
-        <!--其他评论card-->
-        <div class="card">
-            <style>
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
     .valine-card {
         margin: 1.5rem auto;
     }
@@ -756,9 +1096,295 @@
     </a>
 </div>
 
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/10/31/js-gao-ji-ji-chu-bu-fen/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/6.jpg" class="responsive-img" alt="js高级基础部分">
+                        
+                        <span class="card-title">js高级基础部分</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            js高级技术之基础总结
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-31
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/js%E9%AB%98%E7%BA%A7/" class="post-category">
+                                    js高级
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/js%E9%AB%98%E7%BA%A7/">
+                        <span class="chip bg-color">js高级</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/10/28/async-yu-awiat/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/5.jpg" class="responsive-img" alt="async与awiat">
+                        
+                        <span class="card-title">async与awiat</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            异步编程的最终解决方案
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/promise/" class="post-category">
+                                    promise
+                                </a>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/promise/async/" class="post-category">
+                                    async
+                                </a>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/promise/async/await/" class="post-category">
+                                    await
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/async/">
+                        <span class="chip bg-color">async</span>
+                    </a>
+                    
+                    <a href="/tags/awiat/">
+                        <span class="chip bg-color">awiat</span>
+                    </a>
+                    
+                    <a href="/tags/promise/">
+                        <span class="chip bg-color">promise</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Sakura<br />'
+            + '文章作者: Sakura Caslana<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/js/prism.min.js"></script>
+
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
         </div>
     </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/js/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('3'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
 </main>
+
+
 
 
     <footer class="page-footer bg-color">
