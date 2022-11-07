@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="js高级,前端技术">
-    <meta name="description" content="js高级技术之对象高级部分">
+    <meta name="description" content="js高级技术之函数高级部分">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>js高级之对象高级部分 | Sakura</title>
+    <title>js线程机制与事件机制 | Sakura</title>
     <link rel="icon" type="image/png" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/favicon.png">
     
 
@@ -341,12 +341,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">js高级之对象高级部分</h1>
+                    <h1 class="description center-align post-title">js线程机制与事件机制</h1>
                 </div>
             </div>
         </div>
@@ -417,14 +417,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    910
+                    621
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -452,152 +452,70 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="对象的创建模式"><a href="#对象的创建模式" class="headerlink" title="对象的创建模式"></a>对象的创建模式</h2><h3 id="Object构造函数模式"><a href="#Object构造函数模式" class="headerlink" title="Object构造函数模式"></a>Object构造函数模式</h3><ul>
-<li>套路: 先创建空Object对象, 再动态添加属性&#x2F;方法</li>
-<li>适用场景: 起始时不确定对象内部数据</li>
-<li>问题: 语句太多</li>
+                <h2 id="线程与进程"><a href="#线程与进程" class="headerlink" title="线程与进程"></a>线程与进程</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><ul>
+<li>程序的一次执行, 它占有一片独有的内存空间</li>
+<li>可以通过windows任务管理器查看进程</li>
 </ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Tom'</span>
-obj<span class="token punctuation">.</span><span class="token function-variable function">setName</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="对象字面量模式"><a href="#对象字面量模式" class="headerlink" title="对象字面量模式"></a>对象字面量模式</h3><ul>
-<li>套路: 使用{}创建对象, 同时指定属性&#x2F;方法</li>
-<li>适用场景: 起始时对象内部数据是确定的</li>
-<li>问题: 如果创建多个对象, 有重复代码</li>
+<h3 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h3><ul>
+<li>是进程内的一个独立执行单元</li>
+<li>是程序执行的一个完整流程</li>
+<li>是CPU的最小的调度单元</li>
 </ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-  <span class="token literal-property property">name</span> <span class="token operator">:</span> <span class="token string">'Tom'</span><span class="token punctuation">,</span>
-  <span class="token function-variable function">setName</span> <span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="工厂模式（不常用）"><a href="#工厂模式（不常用）" class="headerlink" title="工厂模式（不常用）"></a>工厂模式（不常用）</h3><ul>
-<li>套路: 通过工厂函数动态创建对象并返回</li>
-<li>适用场景: 需要创建多个对象</li>
-<li>问题: 对象没有一个具体的类型, 都是Object类型</li>
+<h3 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h3><ul>
+<li>一个进程至少有一个线程(主)</li>
+<li>程序是在某个进程中的某个线程执行的</li>
 </ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">createPerson</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    name<span class="token punctuation">,</span>
-    age<span class="token punctuation">,</span>
-    <span class="token function-variable function">setName</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
-    <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">&#125;</span>
-  <span class="token keyword">return</span> obj
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h3><ul>
-<li>套路: 自定义构造函数, 通过new创建对象</li>
-<li>适用场景: 需要创建多个类型确定的对象</li>
-<li>问题: 每个对象都有相同的数据, 浪费内存</li>
+<h2 id="浏览器内核模块组成"><a href="#浏览器内核模块组成" class="headerlink" title="浏览器内核模块组成"></a>浏览器内核模块组成</h2><h3 id="主线程"><a href="#主线程" class="headerlink" title="主线程"></a>主线程</h3><ul>
+<li>js引擎模块 : 负责js程序的编译与运行</li>
+<li>html,css文档解析模块 : 负责页面文本的解析</li>
+<li>DOM&#x2F;CSS模块 : 负责dom&#x2F;css在内存中的相关处理 </li>
+<li>布局和渲染模块 : 负责页面的布局和效果的绘制(内存中的对象)</li>
 </ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">setName</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name<span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'tom'</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="构造函数-原型的组合模式"><a href="#构造函数-原型的组合模式" class="headerlink" title="构造函数+原型的组合模式"></a>构造函数+原型的组合模式</h3><ul>
-<li>套路: 自定义构造函数, 属性在函数中初始化, 方法添加到原型上</li>
-<li>适用场景: 需要创建多个类型确定的对象</li>
+<h3 id="分线程"><a href="#分线程" class="headerlink" title="分线程"></a>分线程</h3><ul>
+<li>定时器模块 : 负责定时器的管理</li>
+<li>DOM事件模块 : 负责事件的管理</li>
+<li>网络请求模块 : 负责Ajax请求</li>
 </ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
-<span class="token punctuation">&#125;</span>
-<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">setName</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name<span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
-<span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'tom'</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="继承模式"><a href="#继承模式" class="headerlink" title="继承模式"></a>继承模式</h2><h3 id="原型链继承-得到方法"><a href="#原型链继承-得到方法" class="headerlink" title="原型链继承 : 得到方法"></a>原型链继承 : 得到方法</h3><ul>
-<li>定义父类型构造函数</li>
-<li>给父类型的原型添加方法</li>
-<li>定义子类型的构造函数</li>
-<li>创建父类型的实例对象赋值给子类型的原型</li>
-<li>将子类型原型的构造属性设置为子类型</li>
-<li>给子类型原型添加方法</li>
-<li>创建子类型的对象: 可以调用父类型的方法</li>
+<h2 id="js线程"><a href="#js线程" class="headerlink" title="js线程"></a>js线程</h2><ul>
+<li>js是单线程执行的(回调函数也是在主线程)</li>
+<li>H5提出了实现多线程的方案: Web Workers</li>
+<li>只能是主线程更新界面</li>
 </ul>
-<h5 id="关键"><a href="#关键" class="headerlink" title="关键"></a>关键</h5><ul>
-<li>子类型的原型为父类型的一个实例对象</li>
+<h2 id="定时器问题"><a href="#定时器问题" class="headerlink" title="定时器问题:"></a>定时器问题:</h2><ul>
+<li>定时器并不真正完全定时</li>
+<li>如果在主线程执行了一个长时间的操作, 可能导致延时才处理</li>
 </ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//父类型</span>
-    <span class="token keyword">function</span> <span class="token function">Supper</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span>supProp <span class="token operator">=</span> <span class="token string">'Supper property'</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token class-name">Supper</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">showSupperProp</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>supProp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-
-    <span class="token comment">//子类型</span>
-    <span class="token keyword">function</span> <span class="token function">Sub</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span>subProp <span class="token operator">=</span> <span class="token string">'Sub property'</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token class-name">Sub</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Supper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">// 子类型的原型为父类型的实例</span>
-    <span class="token class-name">Sub</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Sub<span class="token comment">// 子类型的原型的constructor指向子类型 </span>
-    <span class="token class-name">Sub</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">showSubProp</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>subProp<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">&#125;</span>
-    <span class="token keyword">var</span> sub <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Sub</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-    sub<span class="token punctuation">.</span><span class="token function">showSupperProp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">// 调用父类型原型上的方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images%2FpageImage%2Fjs%E9%AB%98%E7%BA%A7%2F%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%BB%A7%E6%89%BF.png"></p>
-<h3 id="借用构造函数-得到属性（假继承）"><a href="#借用构造函数-得到属性（假继承）" class="headerlink" title="借用构造函数 : 得到属性（假继承）"></a>借用构造函数 : 得到属性（假继承）</h3><ul>
-<li>定义父类型构造函数</li>
-<li>定义子类型构造函数</li>
-<li>在子类型构造函数中调用父类型构造</li>
+<h2 id="事件处理机制-图"><a href="#事件处理机制-图" class="headerlink" title="事件处理机制(图)"></a>事件处理机制(图)</h2><h3 id="代码分类"><a href="#代码分类" class="headerlink" title="代码分类"></a>代码分类</h3><ul>
+<li>初始化执行代码: 包含绑定dom事件监听, 设置定时器, 发送ajax请求的代码</li>
+<li>回调执行代码: 处理回调逻辑</li>
 </ul>
-<h5 id="关键-1"><a href="#关键-1" class="headerlink" title="关键"></a>关键</h5><ul>
-<li>在子类型构造函数中通用call()调用父类型构造函数</li>
+<h3 id="js引擎执行代码的基本流程"><a href="#js引擎执行代码的基本流程" class="headerlink" title="js引擎执行代码的基本流程:"></a>js引擎执行代码的基本流程:</h3><ul>
+<li>初始化代码&#x3D;&#x3D;&#x3D;&gt;回调代码</li>
 </ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
-  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">function</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> price</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token function">Person</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span>   <span class="token comment">// 相当于this.Person(name, age)</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">12000</span><span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>name<span class="token punctuation">,</span> s<span class="token punctuation">.</span>age<span class="token punctuation">,</span> s<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h3><ul>
-<li>利用原型链实现对父类型对象的方法继承</li>
-<li>利用call()借用父类型构建函数初始化相同属性</li>
+<h3 id="模型的2个重要组成部分"><a href="#模型的2个重要组成部分" class="headerlink" title="模型的2个重要组成部分:"></a>模型的2个重要组成部分:</h3><ul>
+<li>事件管理模块</li>
+<li>回调队列</li>
 </ul>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
-  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
-<span class="token punctuation">&#125;</span>
-<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">setName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">function</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> price</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token function">Person</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token comment">//得到父类型的属性</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price
-<span class="token punctuation">&#125;</span>
-<span class="token class-name">Student</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">//得到父类型的方法</span>
-<span class="token class-name">Student</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Student
-<span class="token class-name">Student</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">setPrice</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">price</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-  <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price
-<span class="token punctuation">&#125;</span>
-
-<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span>
-s<span class="token punctuation">.</span><span class="token function">setPrice</span><span class="token punctuation">(</span><span class="token number">11000</span><span class="token punctuation">)</span>
-s<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">'Bob'</span><span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>constructor<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="new一个对象背后做了些什么"><a href="#new一个对象背后做了些什么" class="headerlink" title="new一个对象背后做了些什么"></a>new一个对象背后做了些什么</h2><ul>
-<li>创建一个空对象</li>
-<li>给对象设置__proto__, 值为构造函数对象的prototype属性值   this.<strong>proto</strong> &#x3D; Fn.prototype</li>
-<li>执行构造函数体(给对象添加属性&#x2F;方法)</li>
+<h3 id="模型的运转流程"><a href="#模型的运转流程" class="headerlink" title="模型的运转流程"></a>模型的运转流程</h3><ul>
+<li>执行初始化代码, 将事件回调函数交给对应模块管理</li>
+<li>当事件发生时, 管理模块会将回调函数及其数据添加到回调列队中</li>
+<li>只有当初始化代码执行完后(可能要一定时间), 才会遍历读取回调队列中的回调函数执行</li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/js%E9%AB%98%E7%BA%A7/js%E9%AB%98%E7%BA%A7%E4%B9%8B%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E9%83%A8%E5%88%86.zip">博客下载</a></p>
+<h2 id="H5-Web-Workers"><a href="#H5-Web-Workers" class="headerlink" title="H5 Web Workers"></a>H5 Web Workers</h2><ul>
+<li><p>可以让js在分线程执行</p>
+</li>
+<li><p>Worker</p>
+<pre class="line-numbers language-none"><code class="language-none">var worker &#x3D; new Worker(&#39;worker.js&#39;);
+worker.onMessage &#x3D; function(event)&#123;event.data&#125; : 用来接收另一个线程发送过来的数据的回调
+worker.postMessage(data1) : 向另一个线程发送数据<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
+<li>worker内代码不能操作DOM更新UI</li>
+<li>不是每个浏览器都支持这个新特性</li>
+<li>不能跨域加载JS</li>
+<li>svn版本控制</li>
+<li>svn server</li>
+</ul>
 
                 
             </div>
@@ -624,7 +542,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yyc001207.github.io/2022/11/07/js-gao-ji-zhi-dui-xiang-gao-ji-bu-fen/">https://yyc001207.github.io/2022/11/07/js-gao-ji-zhi-dui-xiang-gao-ji-bu-fen/</a>
+                    <a href="https://yyc001207.github.io/2022/11/07/js-xian-cheng-ji-zhi-yu-shi-jian-ji-zhi/">https://yyc001207.github.io/2022/11/07/js-xian-cheng-ji-zhi-yu-shi-jian-ji-zhi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1090,9 +1008,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2022/11/07/js-xian-cheng-ji-zhi-yu-shi-jian-ji-zhi/">
                     <div class="card-image">
@@ -1110,9 +1029,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1129,6 +1048,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1151,24 +1071,24 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/11/01/js-gao-ji-zhi-han-shu-gao-ji-bu-fen/">
+                <a href="/2022/11/07/js-gao-ji-zhi-dui-xiang-gao-ji-bu-fen/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/11.jpg" class="responsive-img" alt="js高级之函数高级部分">
+                        <img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/20.jpg" class="responsive-img" alt="js高级之对象高级部分">
                         
-                        <span class="card-title">js高级之函数高级部分</span>
+                        <span class="card-title">js高级之对象高级部分</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            js高级技术之函数高级部分
+                            js高级技术之对象高级部分
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-07
                             </span>
                         <span class="publish-author">
                             
