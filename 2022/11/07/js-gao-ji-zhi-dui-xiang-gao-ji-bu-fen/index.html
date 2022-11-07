@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="axios,ajax,前端技术">
-    <meta name="description" content="前端最流行的 ajax 请求库">
+    <meta name="keywords" content="js高级,前端技术">
+    <meta name="description" content="js高级技术之对象高级部分">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>axios | Sakura</title>
+    <title>js高级之对象高级部分 | Sakura</title>
     <link rel="icon" type="image/png" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/favicon.png">
     
 
@@ -341,12 +341,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">axios</h1>
+                    <h1 class="description center-align post-title">js高级之对象高级部分</h1>
                 </div>
             </div>
         </div>
@@ -370,16 +370,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/axios/">
-                                <span class="chip bg-color">axios</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
                             </a>
                         
-                            <a href="/tags/ajax/">
-                                <span class="chip bg-color">ajax</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">
-                                <span class="chip bg-color">前端技术</span>
+                            <a href="/tags/js%E9%AB%98%E7%BA%A7/">
+                                <span class="chip bg-color">js高级</span>
                             </a>
                         
                     </div>
@@ -394,8 +390,8 @@
                                 前端
                             </a>
                         
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/axios/" class="post-category">
-                                axios
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/js%E9%AB%98%E7%BA%A7/" class="post-category">
+                                js高级
                             </a>
                         
                     </div>
@@ -407,21 +403,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-10-28
+                    2022-11-07
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-01
+                    2022-11-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    764
+                    906
                 </div>
                 
 
@@ -456,120 +452,151 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a target="_blank" rel="noopener" href="https://github.com/yyc001207/axios">源码地址</a></p>
-<h2 id="Axios-是什么"><a href="#Axios-是什么" class="headerlink" title="Axios 是什么?"></a>Axios 是什么?</h2><p>Axios 是一个基于 <em><a target="_blank" rel="noopener" href="https://javascript.info/promise-basics">promise</a></em> 网络请求库，作用于<a target="_blank" rel="noopener" href="https://nodejs.org/"><code>node.js</code></a> 和浏览器中。 它是 <em><a target="_blank" rel="noopener" href="https://www.lullabot.com/articles/what-is-an-isomorphic-application">isomorphic</a></em> 的(即同一套代码可以运行在浏览器和node.js中)。在服务端它使用原生 node.js <code>http</code> 模块, 而在客户端 (浏览端) 则使用 XMLHttpRequests。</p>
-<ul>
-<li>前端最流行的 ajax 请求库</li>
-<li>react&#x2F;vue 官方都推荐使用 axios 发 ajax 请求</li>
-<li>文档: <a target="_blank" rel="noopener" href="https://github.com/axios/axios">https://github.com/axios/axios</a></li>
-<li>中文文档: <a target="_blank" rel="noopener" href="https://www.axios-http.cn/">https://www.axios-http.cn/</a></li>
+                <h2 id="对象的创建模式"><a href="#对象的创建模式" class="headerlink" title="对象的创建模式"></a>对象的创建模式</h2><h3 id="Object构造函数模式"><a href="#Object构造函数模式" class="headerlink" title="Object构造函数模式"></a>Object构造函数模式</h3><ul>
+<li>套路: 先创建空Object对象, 再动态添加属性&#x2F;方法</li>
+<li>适用场景: 起始时不确定对象内部数据</li>
+<li>问题: 语句太多</li>
 </ul>
-<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
-<li>从浏览器创建 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XMLHttpRequests</a></li>
-<li>从 node.js 创建 <a target="_blank" rel="noopener" href="http://nodejs.org/api/http.html">http</a> 请求</li>
-<li>支持 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a> API</li>
-<li>拦截请求和响应</li>
-<li>转换请求和响应数据</li>
-<li>取消请求</li>
-<li>自动转换JSON数据</li>
-<li>客户端支持防御<a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/Cross-site_request_forgery">XSRF</a></li>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+obj<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Tom'</span>
+obj<span class="token punctuation">.</span><span class="token function-variable function">setName</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="对象字面量模式"><a href="#对象字面量模式" class="headerlink" title="对象字面量模式"></a>对象字面量模式</h3><ul>
+<li>套路: 使用{}创建对象, 同时指定属性&#x2F;方法</li>
+<li>适用场景: 起始时对象内部数据是确定的</li>
+<li>问题: 如果创建多个对象, 有重复代码</li>
 </ul>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="JSON-Server搭建"><a href="#JSON-Server搭建" class="headerlink" title="JSON Server搭建"></a>JSON Server搭建</h3><p>相当于在构建一个小型服务器，方便我们发送AJAX请求</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/typicode/json-server.git">官方文档</a></p>
-<pre class="line-numbers language-none"><code class="language-none">npm install -g json-server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token literal-property property">name</span> <span class="token operator">:</span> <span class="token string">'Tom'</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">setName</span> <span class="token operator">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>新建文件db.json，这里直接使用官方推荐的数据，也可以自己更改</p>
-<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
-  <span class="token property">"posts"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">&#123;</span> <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token property">"title"</span><span class="token operator">:</span> <span class="token string">"json-server"</span><span class="token punctuation">,</span> <span class="token property">"author"</span><span class="token operator">:</span> <span class="token string">"typicode"</span> <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"comments"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">&#123;</span> <span class="token property">"id"</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token property">"body"</span><span class="token operator">:</span> <span class="token string">"some comment"</span><span class="token punctuation">,</span> <span class="token property">"postId"</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">&#125;</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">"profile"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"typicode"</span> <span class="token punctuation">&#125;</span>
-<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="工厂模式（不常用）"><a href="#工厂模式（不常用）" class="headerlink" title="工厂模式（不常用）"></a>工厂模式（不常用）</h3><ul>
+<li>套路: 通过工厂函数动态创建对象并返回</li>
+<li>适用场景: 需要创建多个对象</li>
+<li>问题: 对象没有一个具体的类型, 都是Object类型</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">createPerson</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    name<span class="token punctuation">,</span>
+    age<span class="token punctuation">,</span>
+    <span class="token function-variable function">setName</span><span class="token operator">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> obj
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>在db.json文件所在位置启动服务</p>
-<pre class="line-numbers language-none"><code class="language-none">json-server --watch db.json<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="构造函数模式"><a href="#构造函数模式" class="headerlink" title="构造函数模式"></a>构造函数模式</h3><ul>
+<li>套路: 自定义构造函数, 通过new创建对象</li>
+<li>适用场景: 需要创建多个类型确定的对象</li>
+<li>问题: 每个对象都有相同的数据, 浪费内存</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function-variable function">setName</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name<span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'tom'</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>服务启动后</p>
-<p>访问本地3000端口</p>
-<p><a target="_blank" rel="noopener" href="http://localhost:3000/">http://localhost:3000</a></p>
-<p>db.json对应资源(可以自己修改、新增、删除)</p>
-<p> <a target="_blank" rel="noopener" href="http://localhost:3000/posts">http://localhost:3000/posts</a><br> <a target="_blank" rel="noopener" href="http://localhost:3000/comments">http://localhost:3000/comments</a><br> <a target="_blank" rel="noopener" href="http://localhost:3000/profile">http://localhost:3000/profile</a></p>
-<h3 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h3><p>这里有多种方式安装，在项目中大多使用npm或yarn方式安装，目前属于学习阶段，推荐使用cdn</p>
-<pre class="line-numbers language-none"><code class="language-none">npm i axios
-yarn add axios
-&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;axios&#x2F;dist&#x2F;axios.min.js&quot;&gt;&lt;&#x2F;script&gt; #官方文档
-&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdn.bootcdn.net&#x2F;ajax&#x2F;libs&#x2F;axios&#x2F;1.1.3&#x2F;axios.min.js&quot;&gt;&lt;&#x2F;script&gt; #如果官方文档太慢推荐使用bootcdn<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="构造函数-原型的组合模式"><a href="#构造函数-原型的组合模式" class="headerlink" title="构造函数+原型的组合模式"></a>构造函数+原型的组合模式</h3><ul>
+<li>套路: 自定义构造函数, 属性在函数中初始化, 方法添加到原型上</li>
+<li>适用场景: 需要创建多个类型确定的对象</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">setName</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token operator">=</span>name<span class="token punctuation">;</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'tom'</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h3><p>创建四个按钮分别发送get、post、put、delete请求</p>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-header<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>基本使用<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-primary<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>发送GET请求<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-warning<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>发送POST请求<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-success<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>发送PUT请求<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>btn btn-danger<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>发送DELETE请求<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
-   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="继承模式"><a href="#继承模式" class="headerlink" title="继承模式"></a>继承模式</h2><h3 id="原型链继承-得到方法"><a href="#原型链继承-得到方法" class="headerlink" title="原型链继承 : 得到方法"></a>原型链继承 : 得到方法</h3><ul>
+<li>定义父类型构造函数</li>
+<li>给父类型的原型添加方法</li>
+<li>定义子类型的构造函数</li>
+<li>创建父类型的实例对象赋值给子类型的原型</li>
+<li>将子类型原型的构造属性设置为子类型</li>
+<li>给子类型原型添加方法</li>
+<li>创建子类型的对象: 可以调用父类型的方法</li>
+</ul>
+<h5 id="关键"><a href="#关键" class="headerlink" title="关键"></a>关键</h5><ul>
+<li>子类型的原型为父类型的一个实例对象</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">//父类型</span>
+    <span class="token keyword">function</span> <span class="token function">Supper</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>supProp <span class="token operator">=</span> <span class="token string">'Supper property'</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token class-name">Supper</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">showSupperProp</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>supProp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
 
-<p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/pageImg/axios/axiosbutton.jpg"></p>
-<p>这里的样式使用的是bootcdn上的样式</p>
-<pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">crossorigin</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>anonymous<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.2.2/css/bootstrap.min.css<span class="token punctuation">"</span></span>
-       <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+    <span class="token comment">//子类型</span>
+    <span class="token keyword">function</span> <span class="token function">Sub</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>subProp <span class="token operator">=</span> <span class="token string">'Sub property'</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token class-name">Sub</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Supper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">// 子类型的原型为父类型的实例</span>
+    <span class="token class-name">Sub</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Sub<span class="token comment">// 子类型的原型的constructor指向子类型 </span>
+    <span class="token class-name">Sub</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">showSubProp</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>subProp<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token keyword">var</span> sub <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Sub</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    sub<span class="token punctuation">.</span><span class="token function">showSupperProp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">// 调用父类型原型上的方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="GET请求（查找）"><a href="#GET请求（查找）" class="headerlink" title="GET请求（查找）"></a>GET请求（查找）</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">btns<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-       <span class="token comment">//发送axios请求</span>
-       <span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-           <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'get'</span><span class="token punctuation">,</span>
-           <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'http://localhost:3000/posts/2'</span>
-       <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-           console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-       <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-   <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images%2FpageImage%2Fjs%E9%AB%98%E7%BA%A7%2F%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%BB%A7%E6%89%BF.png"></p>
+<h3 id="借用构造函数-得到属性（假继承）"><a href="#借用构造函数-得到属性（假继承）" class="headerlink" title="借用构造函数 : 得到属性（假继承）"></a>借用构造函数 : 得到属性（假继承）</h3><ul>
+<li>定义父类型构造函数</li>
+<li>定义子类型构造函数</li>
+<li>在子类型构造函数中调用父类型构造</li>
+</ul>
+<h5 id="关键-1"><a href="#关键-1" class="headerlink" title="关键"></a>关键</h5><ul>
+<li>在子类型构造函数中通用call()调用父类型构造函数</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+<span class="token punctuation">&#125;</span>
 
-<h4 id="POST请求（添加）"><a href="#POST请求（添加）" class="headerlink" title="POST请求（添加）"></a>POST请求（添加）</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">btns<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-       <span class="token comment">//发送axios请求</span>
-       <span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-           <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'post'</span><span class="token punctuation">,</span>
-           <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'http://localhost:3000/posts'</span><span class="token punctuation">,</span>
-           <span class="token comment">//设置请求体</span>
-           <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-               <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'我是op'</span><span class="token punctuation">,</span>
-               <span class="token literal-property property">author</span><span class="token operator">:</span> <span class="token string">'派蒙'</span>
-           <span class="token punctuation">&#125;</span>
-       <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-           console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-       <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-   <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">function</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> price</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">Person</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span>   <span class="token comment">// 相当于this.Person(name, age)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price
+<span class="token punctuation">&#125;</span>
 
-<p>执行完post，db.json新增了一篇文章，我点了两次就是两篇</p>
-<p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/pageImg/axios/axiospost%E6%96%B0%E5%A2%9E%E6%BC%94%E7%A4%BA.png"></p>
-<h4 id="PUT（修改）记得带上id"><a href="#PUT（修改）记得带上id" class="headerlink" title="PUT（修改）记得带上id"></a>PUT（修改）记得带上id</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">btns<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-      <span class="token comment">//发送axios请求</span>
-      <span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-          <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'put'</span><span class="token punctuation">,</span>
-          <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'http://localhost:3000/posts/4'</span><span class="token punctuation">,</span><span class="token comment">//必须带上id</span>
-          <span class="token comment">//设置请求体</span>
-          <span class="token literal-property property">data</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
-              <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'我是op'</span><span class="token punctuation">,</span>
-              <span class="token literal-property property">author</span><span class="token operator">:</span> <span class="token string">'荧'</span>
-          <span class="token punctuation">&#125;</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">12000</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>name<span class="token punctuation">,</span> s<span class="token punctuation">.</span>age<span class="token punctuation">,</span> s<span class="token punctuation">.</span>price<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/pageImg/axios/axiosput%E6%BC%94%E7%A4%BA.png"></p>
-<h4 id="DELETE请求（删除）"><a href="#DELETE请求（删除）" class="headerlink" title="DELETE请求（删除）"></a>DELETE请求（删除）</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">btns<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-        <span class="token comment">//发送axios请求</span>
-        <span class="token function">axios</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
-            <span class="token literal-property property">method</span><span class="token operator">:</span> <span class="token string">'delete'</span><span class="token punctuation">,</span>
-            <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">'http://localhost:3000/posts/2'</span><span class="token punctuation">,</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
-            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
-    <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h3><ul>
+<li>利用原型链实现对父类型对象的方法继承</li>
+<li>利用call()借用父类型构建函数初始化相同属性</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+  <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">Person</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">setName</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+<span class="token punctuation">&#125;</span>
 
+<span class="token keyword">function</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> price</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">Person</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> name<span class="token punctuation">,</span> age<span class="token punctuation">)</span> <span class="token comment">//得到父类型的属性</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price
+<span class="token punctuation">&#125;</span>
+<span class="token class-name">Student</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment">//得到父类型的方法</span>
+<span class="token class-name">Student</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> Student
+<span class="token class-name">Student</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">setPrice</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">price</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>price <span class="token operator">=</span> price
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">var</span> s <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">'Tom'</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">10000</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span><span class="token function">setPrice</span><span class="token punctuation">(</span><span class="token number">11000</span><span class="token punctuation">)</span>
+s<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span><span class="token string">'Bob'</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span>constructor<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="new一个对象背后做了些什么"><a href="#new一个对象背后做了些什么" class="headerlink" title="new一个对象背后做了些什么"></a>new一个对象背后做了些什么</h2><ul>
+<li>创建一个空对象</li>
+<li>给对象设置__proto__, 值为构造函数对象的prototype属性值   this.<strong>proto</strong> &#x3D; Fn.prototype</li>
+<li>执行构造函数体(给对象添加属性&#x2F;方法)</li>
+</ul>
 
                 
             </div>
@@ -596,7 +623,7 @@ yarn add axios
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yyc001207.github.io/2022/10/28/axios/">https://yyc001207.github.io/2022/10/28/axios/</a>
+                    <a href="https://yyc001207.github.io/2022/11/07/js-gao-ji-zhi-dui-xiang-gao-ji-bu-fen/">https://yyc001207.github.io/2022/11/07/js-gao-ji-zhi-dui-xiang-gao-ji-bu-fen/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -634,16 +661,12 @@ yarn add axios
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/axios/">
-                                    <span class="chip bg-color">axios</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/ajax/">
-                                    <span class="chip bg-color">ajax</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">
-                                    <span class="chip bg-color">前端技术</span>
+                                <a href="/tags/js%E9%AB%98%E7%BA%A7/">
+                                    <span class="chip bg-color">js高级</span>
                                 </a>
                             
                         </div>
@@ -1066,97 +1089,29 @@ yarn add axios
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/10/28/async-yu-awiat/">
+                <a href="/2022/11/07/js-gao-ji-zhi-dui-xiang-gao-ji-bu-fen/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/24.jpg" class="responsive-img" alt="async与awiat">
+                        <img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/20.jpg" class="responsive-img" alt="js高级之对象高级部分">
                         
-                        <span class="card-title">async与awiat</span>
+                        <span class="card-title">js高级之对象高级部分</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            异步编程的最终解决方案
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-10-28
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
-                                </a>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/promise/" class="post-category">
-                                    promise
-                                </a>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/promise/async/" class="post-category">
-                                    async
-                                </a>
-                            
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/promise/async/await/" class="post-category">
-                                    await
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/async/">
-                        <span class="chip bg-color">async</span>
-                    </a>
-                    
-                    <a href="/tags/awiat/">
-                        <span class="chip bg-color">awiat</span>
-                    </a>
-                    
-                    <a href="/tags/promise/">
-                        <span class="chip bg-color">promise</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/10/28/axios/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/6.jpg" class="responsive-img" alt="axios">
-                        
-                        <span class="card-title">axios</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            前端最流行的 ajax 请求库
+                            js高级技术之对象高级部分
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-10-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-07
                             </span>
                         <span class="publish-author">
                             
@@ -1166,8 +1121,8 @@ yarn add axios
                                     前端
                                 </a>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/axios/" class="post-category">
-                                    axios
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/js%E9%AB%98%E7%BA%A7/" class="post-category">
+                                    js高级
                                 </a>
                             
                             
@@ -1178,16 +1133,69 @@ yarn add axios
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/axios/">
-                        <span class="chip bg-color">axios</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
-                    <a href="/tags/ajax/">
-                        <span class="chip bg-color">ajax</span>
+                    <a href="/tags/js%E9%AB%98%E7%BA%A7/">
+                        <span class="chip bg-color">js高级</span>
                     </a>
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF%E6%8A%80%E6%9C%AF/">
-                        <span class="chip bg-color">前端技术</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/11/01/js-gao-ji-zhi-han-shu-gao-ji-bu-fen/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/11.jpg" class="responsive-img" alt="js高级之函数高级部分">
+                        
+                        <span class="card-title">js高级之函数高级部分</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            js高级技术之函数高级部分
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/js%E9%AB%98%E7%BA%A7/" class="post-category">
+                                    js高级
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/js%E9%AB%98%E7%BA%A7/">
+                        <span class="chip bg-color">js高级</span>
                     </a>
                     
                 </div>
