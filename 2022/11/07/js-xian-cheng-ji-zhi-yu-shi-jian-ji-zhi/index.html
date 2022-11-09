@@ -410,21 +410,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-11-07
+                    2022-11-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    621
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    6 分
                 </div>
                 
 
@@ -452,7 +452,11 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="线程与进程"><a href="#线程与进程" class="headerlink" title="线程与进程"></a>线程与进程</h2><h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><ul>
+                <p><em><strong>基于尚硅谷的<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14s411E7qf/?p=1&vd_source=5b3402369f2047c6a7873145482528ad">尚硅谷JavaScript高级教程</a>提供笔记撰写，加入一些个人理解</strong></em></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/yyc001207/javascript-senior">github源码</a></p>
+<p>最下方有本文下载链接</p>
+<h2 id="线程与进程"><a href="#线程与进程" class="headerlink" title="线程与进程"></a>线程与进程</h2><p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images%2FpageImage%2Fjs%E9%AB%98%E7%BA%A7%2F46548a8fcc449918df224c995a2e69ae125282301e6993202df7f63ce293fa7a.png"></p>
+<h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><ul>
 <li>程序的一次执行, 它占有一片独有的内存空间</li>
 <li>可以通过windows任务管理器查看进程</li>
 </ul>
@@ -461,11 +465,44 @@
 <li>是程序执行的一个完整流程</li>
 <li>是CPU的最小的调度单元</li>
 </ul>
-<h3 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h3><ul>
-<li>一个进程至少有一个线程(主)</li>
-<li>程序是在某个进程中的某个线程执行的</li>
+<h3 id="线程与进程-1"><a href="#线程与进程-1" class="headerlink" title="线程与进程"></a>线程与进程</h3><ul>
+<li>应用程序必须运行在某个进程的某个线程上</li>
+<li>一个进程中至少有一个运行的线程: 主线程,  进程启动后自动创建</li>
+<li>一个进程中也可以同时运行多个线程, 我们会说程序是多线程运行的</li>
+<li>一个进程内的数据可以供其中的多个线程直接共享</li>
+<li>多个进程之间的数据是不能直接共享的</li>
+<li>线程池(thread pool): 保存多个线程对象的容器, 实现线程对象的反复利用</li>
 </ul>
-<h2 id="浏览器内核模块组成"><a href="#浏览器内核模块组成" class="headerlink" title="浏览器内核模块组成"></a>浏览器内核模块组成</h2><h3 id="主线程"><a href="#主线程" class="headerlink" title="主线程"></a>主线程</h3><ul>
+<h3 id="何为多进程与多线程"><a href="#何为多进程与多线程" class="headerlink" title="何为多进程与多线程"></a>何为多进程与多线程</h3><ul>
+<li>多进程运行: 一应用程序可以同时启动多个实例运行</li>
+<li>多线程: 在一个进程内, 同时有多个线程运行</li>
+</ul>
+<h3 id="比较单线程与多线程"><a href="#比较单线程与多线程" class="headerlink" title="比较单线程与多线程"></a>比较单线程与多线程</h3><h4 id="单线程"><a href="#单线程" class="headerlink" title="单线程"></a>单线程</h4><ul>
+<li>顺序编程简单易懂</li>
+<li>效率低</li>
+</ul>
+<h4 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h4><p>优点</p>
+<ul>
+<li>能有效提升CPU的利用率</li>
+</ul>
+<p>缺点</p>
+<ul>
+<li>创建多线程开销</li>
+<li>线程间切换开销</li>
+<li>死锁与状态同步问题</li>
+</ul>
+<h3 id="浏览器运行是单进程还是多进程"><a href="#浏览器运行是单进程还是多进程" class="headerlink" title="浏览器运行是单进程还是多进程"></a>浏览器运行是单进程还是多进程</h3><h4 id="有的是单进程"><a href="#有的是单进程" class="headerlink" title="有的是单进程"></a>有的是单进程</h4><ul>
+<li>firefox（时代变了，新版是多进程）</li>
+<li>老版IE</li>
+</ul>
+<h4 id="有的是多进程"><a href="#有的是多进程" class="headerlink" title="有的是多进程"></a>有的是多进程</h4><ul>
+<li>chrome</li>
+<li>新版IE</li>
+</ul>
+<h3 id="如何查看浏览器是否是多进程运行的呢"><a href="#如何查看浏览器是否是多进程运行的呢" class="headerlink" title="如何查看浏览器是否是多进程运行的呢"></a>如何查看浏览器是否是多进程运行的呢</h3><p>  任务管理器&#x3D;&#x3D;&gt;进程</p>
+<h3 id="浏览器运行是单线程还是多线程"><a href="#浏览器运行是单线程还是多线程" class="headerlink" title="浏览器运行是单线程还是多线程"></a>浏览器运行是单线程还是多线程</h3><p>  都是多线程运行的</p>
+<h2 id="浏览器内核模块组成"><a href="#浏览器内核模块组成" class="headerlink" title="浏览器内核模块组成"></a>浏览器内核模块组成</h2><p>支撑浏览器运行的最核心的程序</p>
+<h3 id="主线程"><a href="#主线程" class="headerlink" title="主线程"></a>主线程</h3><ul>
 <li>js引擎模块 : 负责js程序的编译与运行</li>
 <li>html,css文档解析模块 : 负责页面文本的解析</li>
 <li>DOM&#x2F;CSS模块 : 负责dom&#x2F;css在内存中的相关处理 </li>
@@ -481,15 +518,65 @@
 <li>H5提出了实现多线程的方案: Web Workers</li>
 <li>只能是主线程更新界面</li>
 </ul>
-<h2 id="定时器问题"><a href="#定时器问题" class="headerlink" title="定时器问题:"></a>定时器问题:</h2><ul>
-<li>定时器并不真正完全定时</li>
+<h4 id="如何证明js执行是单线程的"><a href="#如何证明js执行是单线程的" class="headerlink" title="如何证明js执行是单线程的"></a>如何证明js执行是单线程的</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'timeout 3'</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">3000</span><span class="token punctuation">)</span>
+
+<span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'timeout 2'</span><span class="token punctuation">)</span>
+  <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'2222'</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">2000</span><span class="token punctuation">)</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'提示...'</span><span class="token punctuation">)</span><span class="token comment">// alert会暂停主线程。如果setTimeout()在分线程执行，那么alert弹框关闭前setTimeout()设定时间结束后，就应该输出。而实际上，alert存在时，setTimeout()并没有执行</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'alert之后'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>setTimeout()的回调函数是在主线程执行的</li>
+<li>定时器回调函数只有在运行栈中的代码全部执行完后才有可能执行</li>
+</ul>
+<h4 id="代码的分类"><a href="#代码的分类" class="headerlink" title="代码的分类"></a>代码的分类</h4><ul>
+<li>初始化代码</li>
+<li>回调代码（异步代码）</li>
+</ul>
+<h4 id="js引擎执行代码的基本流程"><a href="#js引擎执行代码的基本流程" class="headerlink" title="js引擎执行代码的基本流程"></a>js引擎执行代码的基本流程</h4><ul>
+<li>先执行初始化代码: 包含一些特别的代码</li>
+<li>设置定时器</li>
+<li>绑定监听</li>
+<li>发送ajax请求</li>
+<li>后面在某个时刻才会执行回调代码</li>
+</ul>
+<h4 id="为什么js要用单线程模式-而不用多线程模式"><a href="#为什么js要用单线程模式-而不用多线程模式" class="headerlink" title="为什么js要用单线程模式, 而不用多线程模式"></a>为什么js要用单线程模式, 而不用多线程模式</h4><ul>
+<li>JavaScript的单线程，与它的用途有关。</li>
+<li>作为浏览器脚本语言，JavaScript的主要用途是与用户互动，以及操作DOM。</li>
+<li>这决定了它只能是单线程，否则会带来很复杂的同步问题</li>
+</ul>
+<h2 id="定时器问题"><a href="#定时器问题" class="headerlink" title="定时器问题"></a>定时器问题</h2><h4 id="定时器真是定时执行的吗"><a href="#定时器真是定时执行的吗" class="headerlink" title="定时器真是定时执行的吗"></a>定时器真是定时执行的吗</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'btn'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> start <span class="token operator">=</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'启动定时器'</span><span class="token punctuation">)</span>
+    <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'定时器执行了: '</span><span class="token punctuation">,</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+
+    <span class="token comment">//定时器启动之后做一个长时间的工作</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1000000000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+
+    <span class="token punctuation">&#125;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'完成长时间工作'</span><span class="token punctuation">,</span> Date<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> start<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>定时器并不能保证真正定时执行</li>
+<li>一般会延迟一丁点(可以接受), 也有可能延迟很长时间(不能接受)</li>
 <li>如果在主线程执行了一个长时间的操作, 可能导致延时才处理</li>
 </ul>
-<h2 id="事件处理机制-图"><a href="#事件处理机制-图" class="headerlink" title="事件处理机制(图)"></a>事件处理机制(图)</h2><h3 id="代码分类"><a href="#代码分类" class="headerlink" title="代码分类"></a>代码分类</h3><ul>
+<h4 id="定时器回调函数是在分线程执行的吗"><a href="#定时器回调函数是在分线程执行的吗" class="headerlink" title="定时器回调函数是在分线程执行的吗"></a>定时器回调函数是在分线程执行的吗</h4><p>  在主线程执行的, js是单线程的</p>
+<h4 id="定时器是如何实现的"><a href="#定时器是如何实现的" class="headerlink" title="定时器是如何实现的"></a>定时器是如何实现的</h4><p>  事件循环模型(后面讲)</p>
+<h2 id="事件处理机制-图"><a href="#事件处理机制-图" class="headerlink" title="事件处理机制(图)"></a>事件处理机制(图)</h2><p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images%2FpageImage%2Fjs%E9%AB%98%E7%BA%A7%2Fb53ad402947b3258f11dc6750722b9cb5e4a83ecfd25aef289c8e83b3bbfec2a.png"></p>
+<h3 id="代码分类"><a href="#代码分类" class="headerlink" title="代码分类"></a>代码分类</h3><ul>
 <li>初始化执行代码: 包含绑定dom事件监听, 设置定时器, 发送ajax请求的代码</li>
 <li>回调执行代码: 处理回调逻辑</li>
 </ul>
-<h3 id="js引擎执行代码的基本流程"><a href="#js引擎执行代码的基本流程" class="headerlink" title="js引擎执行代码的基本流程:"></a>js引擎执行代码的基本流程:</h3><ul>
+<h3 id="js引擎执行代码的基本流程-1"><a href="#js引擎执行代码的基本流程-1" class="headerlink" title="js引擎执行代码的基本流程:"></a>js引擎执行代码的基本流程:</h3><ul>
 <li>初始化代码&#x3D;&#x3D;&#x3D;&gt;回调代码</li>
 </ul>
 <h3 id="模型的2个重要组成部分"><a href="#模型的2个重要组成部分" class="headerlink" title="模型的2个重要组成部分:"></a>模型的2个重要组成部分:</h3><ul>
@@ -501,21 +588,54 @@
 <li>当事件发生时, 管理模块会将回调函数及其数据添加到回调列队中</li>
 <li>只有当初始化代码执行完后(可能要一定时间), 才会遍历读取回调队列中的回调函数执行</li>
 </ul>
-<h2 id="H5-Web-Workers"><a href="#H5-Web-Workers" class="headerlink" title="H5 Web Workers"></a>H5 Web Workers</h2><ul>
-<li><p>可以让js在分线程执行</p>
-</li>
-<li><p>Worker</p>
-<pre class="line-numbers language-none"><code class="language-none">var worker &#x3D; new Worker(&#39;worker.js&#39;);
-worker.onMessage &#x3D; function(event)&#123;event.data&#125; : 用来接收另一个线程发送过来的数据的回调
-worker.postMessage(data1) : 向另一个线程发送数据<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+<h3 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h3><ul>
+<li>使用setInterval()和setTimeout()分别实现每隔100ms输出当前次数, 共输出10次，分析比较这2种实现的区别</li>
 </ul>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><ul>
-<li>worker内代码不能操作DOM更新UI</li>
-<li>不是每个浏览器都支持这个新特性</li>
-<li>不能跨域加载JS</li>
-<li>svn版本控制</li>
-<li>svn server</li>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><ul>
+<li>setInterval的回调函数将尝试每隔100ms执行一次, 只要回调代码执行的时间不超过100ms就能定时</li>
+<li>setTimeout的方式: 如果回调代码执行需要xms, 下次回调的时间就会被延迟xms</li>
 </ul>
+<h2 id="H5-Web-Workers"><a href="#H5-Web-Workers" class="headerlink" title="H5 Web Workers"></a>H5 Web Workers</h2><p><img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images%2FpageImage%2Fjs%E9%AB%98%E7%BA%A7%2F9b8fe6697e866afa0b7b68a485c1783bdf1ee8c9b4a335bbe933403a320dc486.png"></p>
+<h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><ul>
+<li>Web Workers 是 HTML5 提供的一个javascript多线程解决方案</li>
+<li>我们可以将一些大计算量的代码交由web Worker运行而不冻结用户界面</li>
+<li>但是子线程完全受主线程控制，且不得操作DOM。所以，这个新标准并没有改变JavaScript单线程的本质</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>实现斐波那契数列  f(n) &#x3D; f(n-1) + f(n-2)</p>
+<ul>
+<li>创建在分线程执行的js文件</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span><span class="token parameter">n</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> n <span class="token operator">&lt;=</span> <span class="token number">2</span> <span class="token operator">?</span> <span class="token number">1</span> <span class="token operator">:</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token comment">//递归</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">var</span> <span class="token function-variable function">onmessage</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">var</span> number <span class="token operator">=</span> event<span class="token punctuation">.</span>data
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'分线程接收主线程发送的数据'</span> <span class="token operator">+</span> number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">//计算</span>
+    <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span>
+    <span class="token function">postMessage</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'分线程向主线程返回数据'</span> <span class="token operator">+</span> result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>在主线程中的js中发消息并设置回调</li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> input <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'number'</span><span class="token punctuation">)</span>
+   document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'btn'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+     <span class="token keyword">var</span> number <span class="token operator">=</span> input<span class="token punctuation">.</span>value
+     <span class="token comment">//创建一个Worker对象</span>
+     <span class="token keyword">var</span> worker <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span><span class="token string">'worker.js'</span><span class="token punctuation">)</span>
+     <span class="token comment">//接收消息</span>
+     worker<span class="token punctuation">.</span><span class="token function-variable function">onmessage</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'主线程接收分线程返回的数据'</span> <span class="token operator">+</span> event<span class="token punctuation">.</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token function">alert</span><span class="token punctuation">(</span>event<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+     <span class="token punctuation">&#125;</span>
+     <span class="token comment">//向分线程发送消息</span>
+     worker<span class="token punctuation">.</span><span class="token function">postMessage</span><span class="token punctuation">(</span>number<span class="token punctuation">)</span>
+     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'主线程向分线程发送的数据'</span> <span class="token operator">+</span> number<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><a target="_blank" rel="noopener" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/js%E9%AB%98%E7%BA%A7/js%E7%BA%BF%E7%A8%8B%E6%9C%BA%E5%88%B6%E4%B8%8E%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6.zip">博客下载</a></p>
 
                 
             </div>
@@ -1348,7 +1468,7 @@ worker.postMessage(data1) : 向另一个线程发送数据<span aria-hidden="tru
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">11.2k</span>
+                        class="white-color">12.4k</span>
             
             
             
