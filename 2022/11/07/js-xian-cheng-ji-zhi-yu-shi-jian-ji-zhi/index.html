@@ -58,8 +58,21 @@
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
-<body>
-    <header class="navbar-fixed">
+    <body>
+        <!-- 弹出文字 -->
+        
+            <script type="text/javascript">
+                // 只在桌面版网页启用特效
+                var windowWidth = $(window).width();
+                if (windowWidth > 768) {
+                    document.write(
+                        '<script type="text/javascript" src="/libs/others/popupText.min.js"><\/script>'
+                    );
+                }
+            </script>
+            
+
+                <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -337,7 +350,7 @@
 </header>
 <script>
 </script>
-    
+                    
 
 
 
@@ -359,7 +372,13 @@
 <main class="post-container content">
 
     
-    <div class="row">
+    <style>
+    #toc-content {
+    height: calc(100vh - 250px);
+    overflow: scroll;
+}
+</style>
+<div class="row">
     <div id="main-content" class="col s12 m12 l9">
         <!-- 文章内容详情 -->
 <div id="artDetail">
@@ -1128,56 +1147,54 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/11/07/js-xian-cheng-ji-zhi-yu-shi-jian-ji-zhi/">
+                <a href="/2022/11/09/ecmasript6/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/10.jpg" class="responsive-img" alt="js线程机制与事件机制">
+                        <img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/29.jpg" class="responsive-img" alt="ECMASript6">
                         
-                        <span class="card-title">js线程机制与事件机制</span>
+                        <span class="card-title">ECMASript6</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            js高级技术之函数高级部分
+                            es6-es11新特性
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-11-07
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-11-09
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
-                                    前端
+                            <a href="/categories/es6/" class="post-category">
+                                    es6
                                 </a>
                             
-                            <a href="/categories/%E5%89%8D%E7%AB%AF/js%E9%AB%98%E7%BA%A7/" class="post-category">
-                                    js高级
+                            <a href="/categories/es6/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    前端基础
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/es6/">
+                        <span class="chip bg-color">es6</span>
                     </a>
                     
-                    <a href="/tags/js%E9%AB%98%E7%BA%A7/">
-                        <span class="chip bg-color">js高级</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">前端基础</span>
                     </a>
                     
                 </div>
@@ -1398,7 +1415,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
 
-    <footer class="page-footer bg-color">
+                        <footer class="page-footer bg-color">
     
         <link rel="stylesheet" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/css/APlayer.min.css">
 <style>
@@ -1468,7 +1485,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">12.4k</span>
+                        class="white-color">16.6k</span>
             
             
             
@@ -1581,7 +1598,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <div class="progress-bar"></div>
 
 
-    <!-- 搜索遮罩框 -->
+                            <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
@@ -1685,7 +1702,7 @@ $(function () {
 });
 </script>
 
-    <!-- 白天和黑夜主题 -->
+                                <!-- 白天和黑夜主题 -->
 <div class="stars-con">
     <div id="stars"></div>
     <div id="stars2"></div>
@@ -1709,7 +1726,7 @@ $(function () {
     }
 </script>
 
-    <!-- 回到顶部按钮 -->
+                                    <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fas fa-arrow-up"></i>
@@ -1717,41 +1734,52 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.min.js"></script>
+                                        <script
+                                            src="/libs/materialize/materialize.min.js"></script>
+                                        <script
+                                            src="/libs/masonry/masonry.pkgd.min.js"></script>
+                                        <script
+                                            src="/libs/aos/aos.js"></script>
+                                        <script
+                                            src="/libs/scrollprogress/scrollProgress.min.js"></script>
+                                        <script
+                                            src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+                                        <script
+                                            src="/js/matery.min.js"></script>
 
-    
+                                        
 
-    
-        
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/sakura.min.js"><\/script>');
-            }
-        </script>
-    
+                                                
 
-    <!-- 雪花特效 -->
-    
+                                                    <script type="text/javascript">
+                                                        // 只在桌面版网页启用特效
+                                                        var windowWidth = $(window).width();
+                                                        if (windowWidth > 768) {
+                                                            document.write('<script type="text/javascript" src="/libs/others/sakura.min.js"><\/script>');
+                                                        }
+                                                    </script>
+                                                    
 
-    <!-- 鼠标星星特效 -->
-    
+                                                        <!-- 雪花特效 -->
+                                                        
 
-     
-        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="/libs/others/TencentCaptcha.js"></script>
-        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
-    
+                                                                <!-- 鼠标星星特效 -->
+                                                                
 
-    <!-- Baidu Analytics -->
+                                                                        
+                                                                            <script
+                                                                                src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+                                                                            <script
+                                                                                src="/libs/others/TencentCaptcha.js"></script>
+                                                                            <button id="TencentCaptcha"
+                                                                                data-appid="xxxxxxxxxx"
+                                                                                data-cbfn="callback" type="button"
+                                                                                hidden></button>
+                                                                            
 
-    <!-- Baidu Push -->
+                                                                                <!-- Baidu Analytics -->
+
+                                                                                    <!-- Baidu Push -->
 
 <script>
     (function () {
@@ -1767,27 +1795,30 @@ $(function () {
     })();
 </script>
 
-    
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
+                                                                                        
+                                                                                                
+                                                                                                    <script async
+                                                                                                        src="/libs/others/busuanzi.pure.mini.js"></script>
+                                                                                                    
 
-    
+                                                                                                        
 
-    
+                                                                                                                
 
-    <!--腾讯兔小巢-->
-    
-    
+                                                                                                                        <!--腾讯兔小巢-->
+                                                                                                                        
+                                                                                                                                
 
-    
+                                                                                                                                        
 
-    
+                                                                                                                                                    
 
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
-    
+                                                                                                                                                            
+                                                                                                                                                                <script
+                                                                                                                                                                    src="/libs/instantpage/instantpage.js"
+                                                                                                                                                                    type="module"></script>
+                                                                                                                                                                
 
-</body>
+    </body>
 
 </html>

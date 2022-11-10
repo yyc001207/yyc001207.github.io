@@ -58,8 +58,21 @@
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
-<body>
-    <header class="navbar-fixed">
+    <body>
+        <!-- 弹出文字 -->
+        
+            <script type="text/javascript">
+                // 只在桌面版网页启用特效
+                var windowWidth = $(window).width();
+                if (windowWidth > 768) {
+                    document.write(
+                        '<script type="text/javascript" src="/libs/others/popupText.min.js"><\/script>'
+                    );
+                }
+            </script>
+            
+
+                <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -337,7 +350,7 @@
 </header>
 <script>
 </script>
-    <div class="bg-cover pd-header about-cover">
+                    <div class="bg-cover pd-header about-cover">
     <div class="container">
     <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
@@ -410,28 +423,10 @@
                 </a>
                 
                 
-                <a href="/categories/%E5%89%8D%E7%AB%AF/js%E9%AB%98%E7%BA%A7/" title="js高级: 4">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F5EEF8;">js高级
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
                 <a href="/categories/%E5%89%8D%E7%AB%AF/promise/" title="promise: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">promise
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/%E5%89%8D%E7%AB%AF/axios/" title="axios: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #E8F8F5;">axios
+                            style="background-color: #F5EEF8;">promise
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -440,7 +435,7 @@
                 <a href="/categories/%E5%89%8D%E7%AB%AF/promise/async/" title="async: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">async
+                            style="background-color: #D5F5E3;">async
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -449,7 +444,43 @@
                 <a href="/categories/%E5%89%8D%E7%AB%AF/promise/async/await/" title="await: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">await
+                            style="background-color: #E8F8F5;">await
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/es6/" title="es6: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #FEF9E7;">es6
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E5%89%8D%E7%AB%AF/axios/" title="axios: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8F9F9;">axios
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/%E5%89%8D%E7%AB%AF/js%E9%AB%98%E7%BA%A7/" title="js高级: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #82E0AA;">js高级
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/categories/es6/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/" title="前端基础: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #D7BDE2;">前端基础
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -813,7 +844,7 @@
 
 
 
-    <footer class="page-footer bg-color">
+                        <footer class="page-footer bg-color">
     
         <link rel="stylesheet" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/css/APlayer.min.css">
 <style>
@@ -883,7 +914,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">12.4k</span>
+                        class="white-color">16.6k</span>
             
             
             
@@ -996,7 +1027,7 @@
 <div class="progress-bar"></div>
 
 
-    <!-- 搜索遮罩框 -->
+                            <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
@@ -1100,7 +1131,7 @@ $(function () {
 });
 </script>
 
-    <!-- 白天和黑夜主题 -->
+                                <!-- 白天和黑夜主题 -->
 <div class="stars-con">
     <div id="stars"></div>
     <div id="stars2"></div>
@@ -1124,7 +1155,7 @@ $(function () {
     }
 </script>
 
-    <!-- 回到顶部按钮 -->
+                                    <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fas fa-arrow-up"></i>
@@ -1132,41 +1163,52 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.min.js"></script>
+                                        <script
+                                            src="/libs/materialize/materialize.min.js"></script>
+                                        <script
+                                            src="/libs/masonry/masonry.pkgd.min.js"></script>
+                                        <script
+                                            src="/libs/aos/aos.js"></script>
+                                        <script
+                                            src="/libs/scrollprogress/scrollProgress.min.js"></script>
+                                        <script
+                                            src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+                                        <script
+                                            src="/js/matery.min.js"></script>
 
-    
+                                        
 
-    
-        
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/sakura.min.js"><\/script>');
-            }
-        </script>
-    
+                                                
 
-    <!-- 雪花特效 -->
-    
+                                                    <script type="text/javascript">
+                                                        // 只在桌面版网页启用特效
+                                                        var windowWidth = $(window).width();
+                                                        if (windowWidth > 768) {
+                                                            document.write('<script type="text/javascript" src="/libs/others/sakura.min.js"><\/script>');
+                                                        }
+                                                    </script>
+                                                    
 
-    <!-- 鼠标星星特效 -->
-    
+                                                        <!-- 雪花特效 -->
+                                                        
 
-     
-        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="/libs/others/TencentCaptcha.js"></script>
-        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
-    
+                                                                <!-- 鼠标星星特效 -->
+                                                                
 
-    <!-- Baidu Analytics -->
+                                                                        
+                                                                            <script
+                                                                                src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+                                                                            <script
+                                                                                src="/libs/others/TencentCaptcha.js"></script>
+                                                                            <button id="TencentCaptcha"
+                                                                                data-appid="xxxxxxxxxx"
+                                                                                data-cbfn="callback" type="button"
+                                                                                hidden></button>
+                                                                            
 
-    <!-- Baidu Push -->
+                                                                                <!-- Baidu Analytics -->
+
+                                                                                    <!-- Baidu Push -->
 
 <script>
     (function () {
@@ -1182,27 +1224,30 @@ $(function () {
     })();
 </script>
 
-    
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
+                                                                                        
+                                                                                                
+                                                                                                    <script async
+                                                                                                        src="/libs/others/busuanzi.pure.mini.js"></script>
+                                                                                                    
 
-    
+                                                                                                        
 
-    
+                                                                                                                
 
-    <!--腾讯兔小巢-->
-    
-    
+                                                                                                                        <!--腾讯兔小巢-->
+                                                                                                                        
+                                                                                                                                
 
-    
+                                                                                                                                        
 
-    
+                                                                                                                                                    
 
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
-    
+                                                                                                                                                            
+                                                                                                                                                                <script
+                                                                                                                                                                    src="/libs/instantpage/instantpage.js"
+                                                                                                                                                                    type="module"></script>
+                                                                                                                                                                
 
-</body>
+    </body>
 
 </html>

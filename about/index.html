@@ -58,8 +58,21 @@
 <meta name="generator" content="Hexo 6.3.0"></head>
 
 
-<body>
-    <header class="navbar-fixed">
+    <body>
+        <!-- 弹出文字 -->
+        
+            <script type="text/javascript">
+                // 只在桌面版网页启用特效
+                var windowWidth = $(window).width();
+                if (windowWidth > 768) {
+                    document.write(
+                        '<script type="text/javascript" src="/libs/others/popupText.min.js"><\/script>'
+                    );
+                }
+            </script>
+            
+
+                <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
@@ -337,7 +350,7 @@
 </header>
 <script>
 </script>
-    <style type="text/css">
+                    <style type="text/css">
     /* don't remove. */
     .about-cover {
         height: 75vh;
@@ -403,21 +416,21 @@
                         <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                             
 <div class="statis">
-    <span class="count"><a href="/">6</a></span>
+    <span class="count"><a href="/">7</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">6</a></span>
+    <span class="count"><a href="/categories">8</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">8</a></span>
+    <span class="count"><a href="/tags">10</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -433,21 +446,21 @@
                                     <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                         
 <div class="statis">
-    <span class="count"><a href="/">6</a></span>
+    <span class="count"><a href="/">7</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">6</a></span>
+    <span class="count"><a href="/categories">8</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">8</a></span>
+    <span class="count"><a href="/tags">10</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -589,7 +602,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,3,3],
+                data: [0,0,0,0,0,0,0,0,0,0,0,3,4],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -631,7 +644,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"前端","value":6},{"name":"js高级","value":4},{"name":"promise","value":1},{"name":"axios","value":1},{"name":"async","value":1},{"name":"await","value":1}],
+                data: [{"name":"前端","value":6},{"name":"promise","value":1},{"name":"async","value":1},{"name":"await","value":1},{"name":"es6","value":1},{"name":"axios","value":1},{"name":"js高级","value":4},{"name":"前端基础","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -655,7 +668,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["前端","js高级","async","awiat","promise","axios","ajax","前端技术"]
+                data: ["前端","js高级","async","awiat","promise","es6","前端基础","axios","ajax","前端技术"]
             }
         ],
         yAxis: [
@@ -668,7 +681,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [4,4,1,1,1,1,1,1],
+                data: [4,4,1,1,1,1,1,1,1,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -711,7 +724,7 @@
         </div>
     </main>
 
-    <footer class="page-footer bg-color">
+                        <footer class="page-footer bg-color">
     
         <link rel="stylesheet" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/css/APlayer.min.css">
 <style>
@@ -781,7 +794,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">12.4k</span>
+                        class="white-color">16.6k</span>
             
             
             
@@ -894,7 +907,7 @@
 <div class="progress-bar"></div>
 
 
-    <!-- 搜索遮罩框 -->
+                            <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
     <div class="modal-content">
         <div class="search-header">
@@ -998,7 +1011,7 @@ $(function () {
 });
 </script>
 
-    <!-- 白天和黑夜主题 -->
+                                <!-- 白天和黑夜主题 -->
 <div class="stars-con">
     <div id="stars"></div>
     <div id="stars2"></div>
@@ -1022,7 +1035,7 @@ $(function () {
     }
 </script>
 
-    <!-- 回到顶部按钮 -->
+                                    <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
     <a class="btn-floating btn-large waves-effect waves-light" href="#!">
         <i class="fas fa-arrow-up"></i>
@@ -1030,41 +1043,52 @@ $(function () {
 </div>
 
 
-    <script src="/libs/materialize/materialize.min.js"></script>
-    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
-    <script src="/libs/aos/aos.js"></script>
-    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
-    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
-    <script src="/js/matery.min.js"></script>
+                                        <script
+                                            src="/libs/materialize/materialize.min.js"></script>
+                                        <script
+                                            src="/libs/masonry/masonry.pkgd.min.js"></script>
+                                        <script
+                                            src="/libs/aos/aos.js"></script>
+                                        <script
+                                            src="/libs/scrollprogress/scrollProgress.min.js"></script>
+                                        <script
+                                            src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+                                        <script
+                                            src="/js/matery.min.js"></script>
 
-    
+                                        
 
-    
-        
-        <script type="text/javascript">
-            // 只在桌面版网页启用特效
-            var windowWidth = $(window).width();
-            if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/sakura.min.js"><\/script>');
-            }
-        </script>
-    
+                                                
 
-    <!-- 雪花特效 -->
-    
+                                                    <script type="text/javascript">
+                                                        // 只在桌面版网页启用特效
+                                                        var windowWidth = $(window).width();
+                                                        if (windowWidth > 768) {
+                                                            document.write('<script type="text/javascript" src="/libs/others/sakura.min.js"><\/script>');
+                                                        }
+                                                    </script>
+                                                    
 
-    <!-- 鼠标星星特效 -->
-    
+                                                        <!-- 雪花特效 -->
+                                                        
 
-     
-        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
-        <script src="/libs/others/TencentCaptcha.js"></script>
-        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
-    
+                                                                <!-- 鼠标星星特效 -->
+                                                                
 
-    <!-- Baidu Analytics -->
+                                                                        
+                                                                            <script
+                                                                                src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+                                                                            <script
+                                                                                src="/libs/others/TencentCaptcha.js"></script>
+                                                                            <button id="TencentCaptcha"
+                                                                                data-appid="xxxxxxxxxx"
+                                                                                data-cbfn="callback" type="button"
+                                                                                hidden></button>
+                                                                            
 
-    <!-- Baidu Push -->
+                                                                                <!-- Baidu Analytics -->
+
+                                                                                    <!-- Baidu Push -->
 
 <script>
     (function () {
@@ -1080,27 +1104,30 @@ $(function () {
     })();
 </script>
 
-    
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
-    
+                                                                                        
+                                                                                                
+                                                                                                    <script async
+                                                                                                        src="/libs/others/busuanzi.pure.mini.js"></script>
+                                                                                                    
 
-    
+                                                                                                        
 
-    
+                                                                                                                
 
-    <!--腾讯兔小巢-->
-    
-    
+                                                                                                                        <!--腾讯兔小巢-->
+                                                                                                                        
+                                                                                                                                
 
-    
+                                                                                                                                        
 
-    
+                                                                                                                                                    
 
-    
-    <script src="/libs/instantpage/instantpage.js" type="module"></script>
-    
+                                                                                                                                                            
+                                                                                                                                                                <script
+                                                                                                                                                                    src="/libs/instantpage/instantpage.js"
+                                                                                                                                                                    type="module"></script>
+                                                                                                                                                                
 
-</body>
+    </body>
 
 </html>
