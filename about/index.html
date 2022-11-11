@@ -399,9 +399,9 @@
         // 每天切换 banner 图.  Switch banner image every day. 
         // 
         let index = Math.floor(Math.random() * 8)
-        
+
         // var bannerUrl = "/medias/banner/" + (Math.floor(Math.random() * 7)) + '.jpg';
-        $('.bg-cover').css('background-image', `url(/medias/banner/0${index}.jpg)`);
+        $('.bg-cover').css('background-image', `url(https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/banner/0${index}.jpg`);
     </script>
     
     </div>
@@ -644,7 +644,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"es6","value":1},{"name":"前端","value":6},{"name":"前端基础","value":1},{"name":"js高级","value":4},{"name":"axios","value":1},{"name":"promise","value":1},{"name":"async","value":1},{"name":"await","value":1}],
+                data: [{"name":"es6","value":1},{"name":"前端","value":6},{"name":"前端基础","value":1},{"name":"js高级","value":4},{"name":"promise","value":1},{"name":"axios","value":1},{"name":"async","value":1},{"name":"await","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -668,7 +668,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["前端","js高级","es6","前端基础","axios","ajax","前端技术","async","awiat","promise"]
+                data: ["前端","js高级","es6","前端基础","async","awiat","promise","axios","ajax","前端技术"]
             }
         ],
         yAxis: [
