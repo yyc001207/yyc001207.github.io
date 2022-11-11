@@ -27,29 +27,29 @@
 
 
         <link rel="stylesheet" type="text/css"
-            href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+            href="/libs/awesome/css/all.min.css">
         <link rel="stylesheet" type="text/css"
-            href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/css/materialize.min.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/css/aos.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/css/animate.min.css">
+            href="/libs/materialize/materialize.min.css">
+        <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+        <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
         <link rel="stylesheet" type="text/css"
             href="/libs/lightGallery/css/lightgallery.min.css">
         <link rel="stylesheet" type="text/css" href="/css/matery.css">
         <link rel="stylesheet" type="text/css" href="/css/my.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/css/dark.css"
+        <link rel="stylesheet" type="text/css" href="/css/dark.css"
             media="none" onload="if(media!='all')media='all'">
 
         
 
 
-    <link rel="stylesheet" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/css/tocbot.css">
-    <link rel="stylesheet" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/css/post.css">
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
 
 
 
             
     
-        <link rel="stylesheet" type="text/css" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/css/reward.css">
+        <link rel="stylesheet" type="text/css" href="/css/reward.css">
     
 
 
@@ -354,7 +354,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/24.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/post/24.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -471,7 +471,7 @@
 
         
         <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/css/prism.min.css">
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
         
 
         
@@ -719,7 +719,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://yyc001207.github.io/2022/10/28/async-yu-awiat/">https://yyc001207.github.io/2022/10/28/async-yu-awiat/</a>
+                    <a href="https://www.yyc001207.top/2022/10/28/async-yu-awiat/">https://www.yyc001207.top/2022/10/28/async-yu-awiat/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -1090,7 +1090,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
 </div>
 
 <script src="/libs/valine/av-min.js"></script>
-<script src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/blog/js/Valine.min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
 <script>
     new Valine({
         el: '#vcomments',
@@ -1197,7 +1197,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/14.jpg" class="responsive-img" alt="js高级基础部分">
+                        <img src="/medias/post/14.jpg" class="responsive-img" alt="js高级基础部分">
                         
                         <span class="card-title">js高级基础部分</span>
                     </div>
@@ -1254,7 +1254,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn-1311041824.cos.ap-guangzhou.myqcloud.com/images/6.jpg" class="responsive-img" alt="axios">
+                        <img src="/medias/post/6.jpg" class="responsive-img" alt="axios">
                         
                         <span class="card-title">axios</span>
                     </div>
@@ -1463,6 +1463,60 @@ app<span class="token punctuation">.</span><span class="token function">listen</
 
                         <footer class="page-footer bg-color">
     
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="tencent"
+                   type="playlist"
+                   id="8667967604"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.3'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
 
     <div class="container row center-align"
          style="margin-bottom: 15px !important;">
@@ -1477,7 +1531,7 @@ app<span class="token punctuation">.</span><span class="token function">listen</
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">16.6k</span>
+                        class="white-color">16.9k</span>
             
             
             
