@@ -36,7 +36,7 @@ export default {
     ],
     theme: defaultTheme({
         repo: 'https://gitee.com/yang-yechuang',
-        docsRepo: 'https://gitee.com/yang-yechuang/vue_press.git',
+        docsRepo: 'https://gitee.com/yang-yechuang/yyc001207.gitee.io.git',
         docsBranch: 'master',
         docsDir: 'docs',
         editLinkPattern: ':repo/tree/:branch/:path',
