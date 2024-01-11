@@ -412,7 +412,7 @@ p.then(() => {
 	})
 ```
 
-## 6.resolve 方法
+## 6.resolve方法
 
 Promise.resolve() 静态方法将给定的值转换为一个 Promise。如果该值本身就是一个 Promise，那么该 Promise 将被返回；
 
@@ -421,63 +421,56 @@ Promise.resolve() 静态方法将给定的值转换为一个 Promise。如果该
 否则，返回的 Promise 将会以该值兑现。
 
 ```js
-let p = Promise.resolve(
-	new Promise((resolve, reject) => {
-		resolve('ok')
-	})
-)
-let p1 = Promise.resolve('success')
-let p2 = Promise.resolve(Promise.resolve('yeah'))
-console.log(p)
-console.log(p1)
-console.log(p2)
+     let p = Promise.resolve(new Promise((resolve, reject) => {
+            resolve('ok')
+        }))
+        let p1 = Promise.resolve('success')
+        let p2 = Promise.resolve(Promise.resolve('yeah'))
+        console.log(p);
+        console.log(p1);
+        console.log(p2);
 ```
 
 ```js
 Promise.resolve = function (value) {
-	// 返回一个Promise对象
-	return new Promise((resolve, reject) => {
-		if (value instanceof Promise) {
-			value.then(
-				v => {
-					resolve(v)
-				},
-				e => {
-					reject(e)
-				}
-			)
-		} else {
-			// 传入非Promise，返回成功的Promise
-			resolve(value)
-		}
-	})
+    // 返回一个Promise对象
+    return new Promise((resolve, reject) => {
+        if (value instanceof Promise) {
+            value.then(v => {
+                resolve(v)
+            }, e => {
+                reject(e)
+            })
+        } else {
+            // 传入非Promise，返回成功的Promise
+            resolve(value)
+        }
+    })
 }
 ```
 
-## 7.reject 方法
+## 7.reject方法
 
 返回一个已拒绝（rejected）的 Promise，拒绝原因为给定的参数。
 
 ```js
-let p = Promise.reject(
-	new Promise((resolve, reject) => {
-		resolve('ok')
-	})
-)
-let p1 = Promise.reject('error')
-console.log(p)
-console.log(p1)
+   let p = Promise.reject(new Promise((resolve, reject) => {
+            resolve('ok')
+        }))
+        let p1 = Promise.reject('error')
+        console.log(p);
+        console.log(p1);
 ```
 
 ```js
 Promise.reject = function (error) {
-	return new Promise((resolve, reject) => {
-		reject(error)
-	})
-}
+    return new Promise((resolve, reject) => {
+        reject(error)
+    })
+} 
 ```
 
-## 8.all 方法
+## 8.all方法
 
 Promise.all() 静态方法接受一个 Promise 可迭代对象作为输入，并返回一个 Promise。
 
@@ -486,136 +479,129 @@ Promise.all() 静态方法接受一个 Promise 可迭代对象作为输入，并
 如果输入的任何 Promise 被拒绝，则返回的 Promise 将被拒绝，并带有第一个被拒绝的原因。
 
 ```js
-let p = new Promise((resolve, reject) => {
-	resolve('ok')
-})
-let p1 = Promise.resolve('success')
-let p2 = Promise.resolve(Promise.resolve('yeah'))
-// 传入的是任意有迭代器的对象
-let result1 = Promise.all([p, p1, p2, 1, 2])
-let result2 = Promise.all(new Set([p, p1, p2, 1, 2, 3]))
-console.log(result1)
-console.log(result2)
+ let p = new Promise((resolve, reject) => {
+            resolve('ok')
+        })
+        let p1 = Promise.resolve('success')
+        let p2 = Promise.resolve(Promise.resolve('yeah'))
+        // 传入的是任意有迭代器的对象
+        let result1 = Promise.all([p, p1, p2, 1, 2])
+        let result2 = Promise.all(new Set([p, p1, p2, 1, 2, 3]))
+        console.log(result1);
+        console.log(result2);
 ```
 
 ```js
 Promise.all = function (promises) {
-	// 返回一个Promise对象
-	return new Promise((resolve, reject) => {
-		// count每成功一个加1  i 记录值的长度
-		let count = 0,
-			i = 0
-		// 保存成功结果
-		const arr = []
-		for (const promise of promises) {
-			const index = i
-			i++
-			// 将非Promise也转为Promise
-			Promise.resolve(promise).then(
-				v => {
-					count++
-					// 保存成功结果
-					arr[index] = v
-					// 如果都成功，调用resolve
-					if (count == i) {
-						resolve(arr)
-					}
-				},
-				e => {
-					// 只要有一个失败，调用reject
-					reject(e)
-				}
-			)
-		}
-		// 如果传入的值长度为0，调用resolve，成功值的为空数组
-		if (i == 0) {
-			resolve(arr)
-		}
-	})
-}
+    // 返回一个Promise对象
+    return new Promise((resolve, reject) => {
+        // count每成功一个加1  i 记录值的长度
+        let count = 0, i = 0
+        // 保存成功结果
+        const arr = []
+        for (const promise of promises) {
+            const index = i
+            i++
+            // 将非Promise也转为Promise
+            Promise.resolve(promise).then(v => {
+                count++
+                // 保存成功结果
+                arr[index] = v
+                // 如果都成功，调用resolve
+                if (count == i) {
+                    resolve(arr)
+                }
+            }, e => {
+                // 只要有一个失败，调用reject
+                reject(e)
+            })
+        }
+        // 如果传入的值长度为0，调用resolve，成功值的为空数组
+        if (i == 0) {
+            resolve(arr)
+        }
+    })
+}   
 ```
 
-在写 all 方法的过程中，如果传递的可迭代对象中的某一个为失败的 Promise，结果不会返回失败的 Promise，而是返回成功的 Promise，结果是其他成功的 Promise 组成的数组。
+在写all方法的过程中，如果传递的可迭代对象中的某一个为失败的Promise，结果不会返回失败的Promise，而是返回成功的Promise，结果是其他成功的Promise组成的数组。
 
-在遍历出的对象执行 then 方法中打印我们记录长度的变量 i，发现他的值是 0,1,2,3；由此我们发现之前所写的 then 方法的回调是同步调用的，根据[MDN 文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/then#then_%E7%9A%84%E5%BC%82%E6%AD%A5%E6%80%A7)，then 方法的回调是异步调用的；所以在 then 方法调用回调时加上一个定时器，将回调改为异步调用。
+在遍历出的对象执行then方法中打印我们记录长度的变量 i，发现他的值是 0,1,2,3；由此我们发现之前所写的then方法的回调是同步调用的，根据[MDN文档](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/then#then_%E7%9A%84%E5%BC%82%E6%AD%A5%E6%80%A7)，then方法的回调是异步调用的；所以在then方法调用回调时加上一个定时器，将回调改为异步调用。
 
 ```js
 Promise.prototype.then = function (onResolved, onRejected) {
-	// 返回一个Promise对象
-	return new Promise((resolve, reject) => {
-		// 保存this
-		const that = this
-		// 判断回调函数
-		if (typeof onRejected !== 'function') {
-			onRejected = err => {
-				throw err
-			}
-		}
-		if (typeof onResolved !== 'function') {
-			onResolved = res => {
-				resolve(res)
-			}
-		}
-		// 封装
-		function back(fun) {
-			try {
-				let result = fun(that.PromiseResult)
-				if (result instanceof Promise) {
-					// 返回一个已兑现的 Promise 对象：res 以该 Promise 的值作为其兑现值。
-					// 返回一个已拒绝的 Promise 对象：res 以该 Promise 的值作为其拒绝值。
-					// 返回另一个待定的 Promise 对象：res 保持待定状态，并在该 Promise 对象被兑现/拒绝后立即以该 Promise 的值作为其兑现/拒绝值。
-					result.then(
-						v => {
-							resolve(v)
-						},
-						e => {
-							reject(e)
-						}
-					)
-				} else {
-					// 返回一个值：res 以该返回值作为其兑现值。
-					// 没有返回任何值：res 以 undefined 作为其兑现值。
-					resolve(result)
-				}
-			} catch (error) {
-				// 抛出一个错误：p 抛出的错误作为其拒绝值。
-				reject(error)
-			}
-		}
-		if (this.PromiseState === 'fulfilled') {
-			// 定时器的作用是，实现then方法的异步性
-			setTimeout(() => {
-				back(onResolved)
-			})
-		}
-		if (this.PromiseState === 'rejected') {
-			// 定时器的作用是，实现then方法的异步性
-			setTimeout(() => {
-				back(onRejected)
-			})
-		}
-		if (this.PromiseState === 'pending') {
-			// 实现执行多个回调，即调用多次then方法（p.then();p.then(); 不是链式调用）
-			this.callback.push({
-				onResolved: function () {
-					// 定时器的作用是，实现then方法的异步性
-					setTimeout(() => {
-						back(onResolved)
-					})
-				},
-				onRejected: function () {
-					// 定时器的作用是，实现then方法的异步性
-					setTimeout(() => {
-						back(onRejected)
-					})
-				},
-			})
-		}
-	})
+    // 返回一个Promise对象
+    return new Promise((resolve, reject) => {
+        // 保存this
+        const that = this
+        // 判断回调函数
+        if (typeof onRejected !== 'function') {
+            onRejected = err => {
+                throw err
+            }
+        }
+        if (typeof onResolved !== 'function') {
+            onResolved = res => {
+                resolve(res)
+            }
+        }
+        // 封装
+        function back(fun) {
+            try {
+                let result = fun(that.PromiseResult)
+                if (result instanceof Promise) {
+                    // 返回一个已兑现的 Promise 对象：res 以该 Promise 的值作为其兑现值。
+                    // 返回一个已拒绝的 Promise 对象：res 以该 Promise 的值作为其拒绝值。
+                    // 返回另一个待定的 Promise 对象：res 保持待定状态，并在该 Promise 对象被兑现/拒绝后立即以该 Promise 的值作为其兑现/拒绝值。
+                    result.then(v => {
+                        resolve(v)
+                    }, e => {
+                        reject(e)
+                    })
+                } else {
+                    // 返回一个值：res 以该返回值作为其兑现值。
+                    // 没有返回任何值：res 以 undefined 作为其兑现值。
+                    resolve(result)
+                }
+            } catch (error) {
+                // 抛出一个错误：p 抛出的错误作为其拒绝值。
+                reject(error)
+            }
+        }
+        if (this.PromiseState === 'fulfilled') {
+            // 定时器的作用是，实现then方法的异步性
+            setTimeout(() => {
+                back(onResolved)
+            })
+        }
+        if (this.PromiseState === 'rejected') {
+            // 定时器的作用是，实现then方法的异步性
+            setTimeout(() => {
+                back(onRejected)
+            })
+        }
+        if (this.PromiseState === 'pending') {
+            // 实现执行多个回调，即调用多次then方法（p.then();p.then(); 不是链式调用）
+            this.callback.push({
+                onResolved: function () {
+                    // 定时器的作用是，实现then方法的异步性
+                    setTimeout(() => {
+                        back(onResolved)
+                    })
+                },
+                onRejected: function () {
+                    // 定时器的作用是，实现then方法的异步性
+                    setTimeout(() => {
+                        back(onRejected)
+                    })
+                }
+            })
+        }
+    })
 }
 ```
 
-## 9.race 方法
+## 9.race方法
 
 Promise.race() 静态方法接受一个 promise 可迭代对象作为输入，并返回一个 Promise。
 
@@ -623,148 +609,127 @@ Promise.race() 静态方法接受一个 promise 可迭代对象作为输入，�
 
 ```js
 Promise.race = function (promises) {
-	// 返回一个Promise对象
-	return new Promise((resolve, reject) => {
-		let i = 0
-		for (const promise of promises) {
-			i++
-			Promise.resolve(promise).then(
-				v => {
-					// 修改返回对象为成功
-					resolve(v)
-				},
-				e => {
-					// 只要有一个失败，调用reject
-					reject(e)
-				}
-			)
-		}
-		// 如果传入的值长度为0，调用resolve，成功值的为空数组
-		if (i == 0) {
-			resolve([])
-		}
-	})
-}
+    // 返回一个Promise对象
+    return new Promise((resolve, reject) => {
+        let i = 0
+        for (const promise of promises) {
+            i++
+            Promise.resolve(promise).then(v => {
+                // 修改返回对象为成功
+                resolve(v)
+            }, e => {
+                // 只要有一个失败，调用reject
+                reject(e)
+            })
+        }
+        // 如果传入的值长度为0，调用resolve，成功值的为空数组
+        if (i == 0) {
+            resolve([])
+        }
+    })
+}                                                                                             
 ```
 
-## 10.Promise 构造函数
+## 10.Promise构造函数
 
 ```js
 function Promise(executor) {
-	// 创建属性值保存状态与结果值
-	this.PromiseState = 'pending'
-	this.PromiseResult = null
-	// 新增实例F属性保存then方法的回调
-	this.callback = []
-	// resolve函数
-	const resolve = data => {
-		// 保证只会执行一次成功或失败
-		if (this.PromiseState !== 'pending') return
-		this.PromiseState = 'fulfilled'
-		this.PromiseResult = data
-		// 执行器执行异步任务，当状态改变时，执行then方法回调
-		this.callback.forEach(item => {
-			item.onResolved(data)
-		})
-	}
-	// reject函数
-	const reject = data => {
-		// 保证只会执行一次成功或失败
-		if (this.PromiseState !== 'pending') return
-		this.PromiseState = 'rejected'
-		this.PromiseResult = data
-		// 执行器执行异步任务，当状态改变时，执行then方法回调
-		this.callback.forEach(item => {
-			item.onRejected(data)
-		})
-	}
-	// 使用try catch捕获异常，将其转化为失败的Promise结果
-	try {
-		// 同步调用执行器函数
-		executor(resolve, reject)
-	} catch (error) {
-		reject(error)
-	}
+    // 创建属性值保存状态与结果值
+    this.PromiseState = 'pending'
+    this.PromiseResult = null
+    // 新增实例F属性保存then方法的回调
+    this.callback = []
+    // resolve函数
+    const resolve = (data) => {
+        // 保证只会执行一次成功或失败
+        if (this.PromiseState !== 'pending') return
+        this.PromiseState = 'fulfilled'
+        this.PromiseResult = data
+        // 执行器执行异步任务，当状态改变时，执行then方法回调
+        this.callback.forEach(item => {
+            item.onResolved(data)
+        })
+    }
+    // reject函数
+    const reject = (data) => {
+        // 保证只会执行一次成功或失败
+        if (this.PromiseState !== 'pending') return
+        this.PromiseState = 'rejected'
+        this.PromiseResult = data
+        // 执行器执行异步任务，当状态改变时，执行then方法回调
+        this.callback.forEach(item => {
+            item.onRejected(data)
+        })
+    }
+    // 使用try catch捕获异常，将其转化为失败的Promise结果
+    try {
+        // 同步调用执行器函数
+        executor(resolve, reject)
+    } catch (error) {
+        reject(error)
+    }
 }
 
 // then方法
-Promise.prototype.then = function (onResolved, onRejected) {
-	// 返回一个Promise对象
-	return new Promise((resolve, reject) => {
-		// 保存this
-		const that = this
-		// 判断回调函数
-		if (typeof onRejected !== 'function') {
-			onRejected = err => {
-				throw err
-			}
-		}
-		if (typeof onResolved !== 'function') {
-			onResolved = res => {
-				resolve(res)
-			}
-		}
-		// 封装
-		function back(fun) {
-			try {
-				let result = fun(that.PromiseResult)
-				if (result instanceof Promise) {
-					// 返回一个已兑现的 Promise 对象：res 以该 Promise 的值作为其兑现值。
-					// 返回一个已拒绝的 Promise 对象：res 以该 Promise 的值作为其拒绝值。
-					// 返回另一个待定的 Promise 对象：res 保持待定状态，并在该 Promise 对象被兑现/拒绝后立即以该 Promise 的值作为其兑现/拒绝值。
-					result.then(
-						v => {
-							resolve(v)
-						},
-						e => {
-							reject(e)
-						}
-					)
-				} else {
-					// 返回一个值：res 以该返回值作为其兑现值。
-					// 没有返回任何值：res 以 undefined 作为其兑现值。
-					resolve(result)
-				}
-			} catch (error) {
-				// 抛出一个错误：p 抛出的错误作为其拒绝值。
-				reject(error)
-			}
-		}
-		if (this.PromiseState === 'fulfilled') {
-			// 定时器的作用是，实现then方法的异步性
-			setTimeout(() => {
-				back(onResolved)
-			})
-		}
-		if (this.PromiseState === 'rejected') {
-			// 定时器的作用是，实现then方法的异步性
-			setTimeout(() => {
-				back(onRejected)
-			})
-		}
-		if (this.PromiseState === 'pending') {
-			// 实现执行多个回调，即调用多次then方法（p.then();p.then(); 不是链式调用）
-			this.callback.push({
-				onResolved: function () {
-					// 定时器的作用是，实现then方法的异步性
-					setTimeout(() => {
-						back(onResolved)
-					})
-				},
-				onRejected: function () {
-					// 定时器的作用是，实现then方法的异步性
-					setTimeout(() => {
-						back(onRejected)
-					})
-				},
-			})
-		}
-	})
+Promise.prototype.then = function (onResolved = res => res, onRejected = err => { throw err }) {
+    // 返回一个Promise对象
+    return new Promise((resolve, reject) => {
+        // 保存this
+        const that = this
+        // 封装
+        function back(fun) {
+            try {
+                let result = fun(that.PromiseResult)
+                if (result instanceof Promise) {
+                    // 返回一个已兑现的 Promise 对象：res 以该 Promise 的值作为其兑现值。
+                    // 返回一个已拒绝的 Promise 对象：res 以该 Promise 的值作为其拒绝值。
+                    // 返回另一个待定的 Promise 对象：res 保持待定状态，并在该 Promise 对象被兑现/拒绝后立即以该 Promise 的值作为其兑现/拒绝值。
+                    result.then(resolve, reject)
+                } else {
+                    // 返回一个值：res 以该返回值作为其兑现值。
+                    // 没有返回任何值：res 以 undefined 作为其兑现值。
+                    resolve(result)
+                }
+            } catch (error) {
+                // 抛出一个错误：p 抛出的错误作为其拒绝值。
+                reject(error)
+            }
+        }
+        if (this.PromiseState === 'fulfilled') {
+            // 定时器的作用是，实现then方法的异步性
+            setTimeout(() => {
+                back(onResolved)
+            })
+        }
+        if (this.PromiseState === 'rejected') {
+            // 定时器的作用是，实现then方法的异步性
+            setTimeout(() => {
+                back(onRejected)
+            })
+        }
+        if (this.PromiseState === 'pending') {
+            // 实现执行多个回调，即调用多次then方法（p.then();p.then(); 不是链式调用）
+            this.callback.push({
+                onResolved: function () {
+                    // 定时器的作用是，实现then方法的异步性
+                    setTimeout(() => {
+                        back(onResolved)
+                    })
+                },
+                onRejected: function () {
+                    // 定时器的作用是，实现then方法的异步性
+                    setTimeout(() => {
+                        back(onRejected)
+                    })
+                }
+            })
+        }
+    })
 }
 
 // catch方法
 Promise.prototype.catch = function (onRejected) {
-	return this.then(undefined, onRejected)
+    return this.then(undefined, onRejected)
 }
 
 // resolve方法
@@ -772,31 +737,24 @@ Promise.prototype.catch = function (onRejected) {
 // 如果该值是一个 thenable 对象，Promise.resolve() 将调用其 then() 方法及其两个回调函数；
 // 否则，返回的 Promise 将会以该值兑现。
 Promise.resolve = function (value) {
-	// 返回一个Promise对象
-	return new Promise((resolve, reject) => {
-		if (value instanceof Promise) {
-			value.then(
-				v => {
-					resolve(v)
-				},
-				e => {
-					reject(e)
-				}
-			)
-		} else {
-			// 传入非Promise，返回成功的Promise
-			resolve(value)
-		}
-	})
+    // 返回一个Promise对象
+    return new Promise((resolve, reject) => {
+        if (value instanceof Promise) {
+            value.then(resolve, reject)
+        } else {
+            // 传入非Promise，返回成功的Promise
+            resolve(value)
+        }
+    })
 }
 
 // reject方法
 // 返回一个已拒绝（rejected）的 Promise，拒绝原因为给定的参数。
 Promise.reject = function (error) {
-	// 返回一个Promise对象
-	return new Promise((resolve, reject) => {
-		reject(error)
-	})
+    // 返回一个Promise对象
+    return new Promise((resolve, reject) => {
+        reject(error)
+    })
 }
 
 // all方法
@@ -804,290 +762,180 @@ Promise.reject = function (error) {
 // 当所有输入的 Promise 都被兑现时，返回的 Promise 也将被兑现（即使传入的是一个空的可迭代对象），并返回一个包含所有兑现值的数组。
 // 如果输入的任何 Promise 被拒绝，则返回的 Promise 将被拒绝，并带有第一个被拒绝的原因。
 Promise.all = function (promises) {
-	// 返回一个Promise对象
-	return new Promise((resolve, reject) => {
-		// count每成功一个加1  i 记录值的长度
-		let count = 0,
-			i = 0
-		// 保存成功结果
-		const arr = []
-		for (const promise of promises) {
-			const index = i
-			i++
-			// 将非Promise也转为Promise
-			Promise.resolve(promise).then(
-				v => {
-					count++
-					// 保存成功结果
-					arr[index] = v
-					// 如果都成功，调用resolve
-					if (count == i) {
-						resolve(arr)
-					}
-				},
-				e => {
-					// 只要有一个失败，调用reject
-					reject(e)
-				}
-			)
-		}
-		// 如果传入的值长度为0，调用resolve，成功值的为空数组
-		if (i == 0) {
-			resolve(arr)
-		}
-	})
+    // 返回一个Promise对象
+    return new Promise((resolve, reject) => {
+        // count每成功一个加1  i 记录值的长度
+        let count = 0, i = 0
+        // 保存成功结果
+        const arr = []
+        for (const promise of promises) {
+            const index = i
+            i++
+            // 将非Promise也转为Promise
+            Promise.resolve(promise).then(v => {
+                count++
+                // 保存成功结果
+                arr[index] = v
+                // 如果都成功，调用resolve
+                if (count == i) {
+                    resolve(arr)
+                }
+            }, e => {
+                // 只要有一个失败，调用reject
+                reject(e)
+            })
+        }
+        // 如果传入的值长度为0，调用resolve，成功值的为空数组
+        if (i == 0) {
+            resolve(arr)
+        }
+    })
 }
 
 // race方法
 // Promise.race() 静态方法接受一个 promise 可迭代对象作为输入，并返回一个 Promise。
 // 这个返回的 promise 会随着第一个 promise 的敲定而敲定。
 Promise.race = function (promises) {
-	// 返回一个Promise对象
-	return new Promise((resolve, reject) => {
-		let i = 0
-		for (const promise of promises) {
-			i++
-			// 将非Promise也转为Promise
-			Promise.resolve(promise).then(
-				v => {
-					// 修改返回对象为成功
-					resolve(v)
-				},
-				e => {
-					// 只要有一个失败，调用reject
-					reject(e)
-				}
-			)
-		}
-		// 如果传入的值长度为0，调用resolve，成功值的为空数组
-		if (i == 0) {
-			resolve([])
-		}
-	})
+    // 返回一个Promise对象
+    return new Promise((resolve, reject) => {
+        let i = 0
+        for (const promise of promises) {
+            i++
+            // 将非Promise也转为Promise
+            Promise.resolve(promise).then(resolve, reject)
+        }
+        // 如果传入的值长度为0，调用resolve，成功值的为空数组
+        if (i == 0) {
+            resolve([])
+        }
+    })
 }
 ```
 
-## 11.Promise 类
+## 11.Promise类
 
 ```js
-// class封装
 class Promise {
-	// 构造函数
-	constructor(executor) {
-		// 创建属性值保存状态与结果值
-		this.PromiseState = 'pending'
-		this.PromiseResult = null
-		// 新增实例F属性保存then方法的回调
-		this.callback = []
-		// resolve函数
-		const resolve = data => {
-			// 保证只会执行一次成功或失败
-			if (this.PromiseState !== 'pending') return
-			this.PromiseState = 'fulfilled'
-			this.PromiseResult = data
-			// 执行器执行异步任务，当状态改变时，执行then方法回调
-			this.callback.forEach(item => {
-				item.onResolved(data)
-			})
-		}
-		// reject函数
-		const reject = data => {
-			// 保证只会执行一次成功或失败
-			if (this.PromiseState !== 'pending') return
-			this.PromiseState = 'rejected'
-			this.PromiseResult = data
-			// 执行器执行异步任务，当状态改变时，执行then方法回调
-			this.callback.forEach(item => {
-				item.onRejected(data)
-			})
-		}
-		// 使用try catch捕获异常，将其转化为失败的Promise结果
-		try {
-			// 同步调用执行器函数
-			executor(resolve, reject)
-		} catch (error) {
-			reject(error)
-		}
-	}
-
-	// then方法
-	then(onResolved, onRejected) {
-		// 返回一个Promise对象
-		return new Promise((resolve, reject) => {
-			// 保存this
-			const that = this
-			// 判断回调函数
-			if (typeof onRejected !== 'function') {
-				onRejected = err => {
-					throw err
-				}
-			}
-			if (typeof onResolved !== 'function') {
-				onResolved = res => {
-					resolve(res)
-				}
-			}
-			// 封装
-			function back(fun) {
-				try {
-					let result = fun(that.PromiseResult)
-					if (result instanceof Promise) {
-						// 返回一个已兑现的 Promise 对象：res 以该 Promise 的值作为其兑现值。
-						// 返回一个已拒绝的 Promise 对象：res 以该 Promise 的值作为其拒绝值。
-						// 返回另一个待定的 Promise 对象：res 保持待定状态，并在该 Promise 对象被兑现/拒绝后立即以该 Promise 的值作为其兑现/拒绝值。
-						result.then(
-							v => {
-								resolve(v)
-							},
-							e => {
-								reject(e)
-							}
-						)
-					} else {
-						// 返回一个值：res 以该返回值作为其兑现值。
-						// 没有返回任何值：res 以 undefined 作为其兑现值。
-						resolve(result)
-					}
-				} catch (error) {
-					// 抛出一个错误：p 抛出的错误作为其拒绝值。
-					reject(error)
-				}
-			}
-			if (this.PromiseState === 'fulfilled') {
-				// 定时器的作用是，实现then方法的异步性
-				setTimeout(() => {
-					back(onResolved)
-				})
-			}
-			if (this.PromiseState === 'rejected') {
-				// 定时器的作用是，实现then方法的异步性
-				setTimeout(() => {
-					back(onRejected)
-				})
-			}
-			if (this.PromiseState === 'pending') {
-				// 实现执行多个回调，即调用多次then方法（p.then();p.then(); 不是链式调用）
-				this.callback.push({
-					onResolved: function () {
-						// 定时器的作用是，实现then方法的异步性
-						setTimeout(() => {
-							back(onResolved)
-						})
-					},
-					onRejected: function () {
-						// 定时器的作用是，实现then方法的异步性
-						setTimeout(() => {
-							back(onRejected)
-						})
-					},
-				})
-			}
-		})
-	}
-
-	// catch方法
-	catch(onRejected) {
-		return this.then(undefined, onRejected)
-	}
-
-	// resolve方法
-	// Promise.resolve() 静态方法将给定的值转换为一个 Promise。如果该值本身就是一个 Promise，那么该 Promise 将被返回；
-	// 如果该值是一个 thenable 对象，Promise.resolve() 将调用其 then() 方法及其两个回调函数；
-	// 否则，返回的 Promise 将会以该值兑现。
-	static resolve(value) {
-		// 返回一个Promise对象
-		return new Promise((resolve, reject) => {
-			if (value instanceof Promise) {
-				value.then(
-					v => {
-						resolve(v)
-					},
-					e => {
-						reject(e)
-					}
-				)
-			} else {
-				// 传入非Promise，返回成功的Promise
-				resolve(value)
-			}
-		})
-	}
-
-	// reject方法
-	// 返回一个已拒绝（rejected）的 Promise，拒绝原因为给定的参数。
-	static reject(error) {
-		// 返回一个Promise对象
-		return new Promise((resolve, reject) => {
-			reject(error)
-		})
-	}
-
-	// all方法
-	// Promise.all() 静态方法接受一个 Promise 可迭代对象作为输入，并返回一个 Promise。
-	// 当所有输入的 Promise 都被兑现时，返回的 Promise 也将被兑现（即使传入的是一个空的可迭代对象），并返回一个包含所有兑现值的数组。
-	// 如果输入的任何 Promise 被拒绝，则返回的 Promise 将被拒绝，并带有第一个被拒绝的原因。
-	static all(promises) {
-		// 返回一个Promise对象
-		return new Promise((resolve, reject) => {
-			// count每成功一个加1  i 记录值的长度
-			let count = 0,
-				i = 0
-			// 保存成功结果
-			const arr = []
-			for (const promise of promises) {
-				const index = i
-				i++
-				// 将非Promise也转为Promise
-				Promise.resolve(promise).then(
-					v => {
-						count++
-						// 保存成功结果
-						arr[index] = v
-						// 如果都成功，调用resolve
-						if (count == i) {
-							resolve(arr)
-						}
-					},
-					e => {
-						// 只要有一个失败，调用reject
-						reject(e)
-					}
-				)
-			}
-			// 如果传入的值长度为0，调用resolve，成功值的为空数组
-			if (i == 0) {
-				resolve(arr)
-			}
-		})
-	}
-
-	// race方法
-	// Promise.race() 静态方法接受一个 promise 可迭代对象作为输入，并返回一个 Promise。
-	// 这个返回的 promise 会随着第一个 promise 的敲定而敲定。
-
-	static race(promises) {
-		// 返回一个Promise对象
-		return new Promise((resolve, reject) => {
-			let i = 0
-			for (const promise of promises) {
-				i++
-				// 将非Promise也转为Promise
-				Promise.resolve(promise).then(
-					v => {
-						// 修改返回对象为成功
-						resolve(v)
-					},
-					e => {
-						// 只要有一个失败，调用reject
-						reject(e)
-					}
-				)
-			}
-			// 如果传入的值长度为0，调用resolve，成功值的为空数组
-			if (i == 0) {
-				resolve([])
-			}
-		})
-	}
-}
+    constructor(executor) {
+        this.PromiseState = 'pending'
+        this.PromiseResult = null
+        this.callback = []
+        const resolve = (data) => {
+            if (this.PromiseState !== 'pending') return
+            this.PromiseState = 'fulfilled'
+            this.PromiseResult = data
+            this.callback.forEach(item => {
+                item.onResolved(data)
+            })
+        }
+        const reject = (data) => {
+            if (this.PromiseState !== 'pending') return
+            this.PromiseState = 'rejected'
+            this.PromiseResult = data
+            this.callback.forEach(item => {
+                item.onRejected(data)
+            })
+        }
+        try {
+            executor(resolve, reject)
+        } catch (error) {
+            reject(error)
+        }
+    }
+    then(onResolved = res => res, onRejected = err => { throw err }) {
+        return new Promise((resolve, reject) => {
+            const that = this
+            function back(fun) {
+                try {
+                    let result = fun(that.PromiseResult)
+                    if (result instanceof Promise) {
+                        result.then(resolve, reject)
+                    } else {
+                        resolve(result)
+                    }
+                } catch (error) {
+                    reject(error)
+                }
+            }
+            if (this.PromiseState === 'fulfilled') {
+                setTimeout(() => {
+                    back(onResolved)
+                })
+            }
+            if (this.PromiseState === 'rejected') {
+                setTimeout(() => {
+                    back(onRejected)
+                })
+            }
+            if (this.PromiseState === 'pending') {
+                this.callback.push({
+                    onResolved: function () {
+                        setTimeout(() => {
+                            back(onResolved)
+                        })
+                    },
+                    onRejected: function () {
+                        setTimeout(() => {
+                            back(onRejected)
+                        })
+                    }
+                })
+            }
+        })
+    }
+    catch(onRejected) {
+        return this.then(undefined, onRejected)
+    }
+    static resolve(value) {
+        return new Promise((resolve, reject) => {
+            if (value instanceof Promise) {
+                value.then(resolve, reject)
+            } else {
+                resolve(value)
+            }
+        })
+    }
+    static reject(error) {
+        return new Promise((resolve, reject) => {
+            reject(error)
+        })
+    }
+    static all(promises) {
+        return new Promise((resolve, reject) => {
+            let count = 0, i = 0
+            const arr = []
+            for (const promise of promises) {
+                const index = i
+                i++
+                Promise.resolve(promise).then(v => {
+                    count++
+                    arr[index] = v
+                    if (count == i) {
+                        resolve(arr)
+                    }
+                }, e => {
+                    reject(e)
+                })
+            }
+            if (i == 0) {
+                resolve(arr)
+            }
+        })
+    }
+    static race(promises) {
+        return new Promise((resolve, reject) => {
+            let i = 0
+            for (const promise of promises) {
+                i++
+                Promise.resolve(promise).then(
+                    resolve, reject
+                )
+            }
+            if (i == 0) {
+                resolve([])
+            }
+        })
+    }
+}                                                                                    
 ```
+
