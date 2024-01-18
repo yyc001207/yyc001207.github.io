@@ -1,0 +1,1 @@
+import{_ as t,o as a,c,a as e,b as o}from"./app-3d6b8d01.js";const r={},s=e("h1",{id:"vue2模板项目搭建",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#vue2模板项目搭建","aria-hidden":"true"},"#"),o(" vue2模板项目搭建")],-1),n=[s];function _(d,i){return a(),c("div",null,n)}const h=t(r,[["render",_],["__file","vue2.html.vue"]]);export{h as default};

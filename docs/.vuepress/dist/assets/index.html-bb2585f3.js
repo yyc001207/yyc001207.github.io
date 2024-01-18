@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-fffb8e28","path":"/guide/","title":"说明","lang":"zh-CN","frontmatter":{"sidebar":false},"headers":[],"git":{"updatedTime":1704635934000,"contributors":[{"name":"yyc","email":"1536376956@qq.com","commits":1}]},"filePathRelative":"guide/README.md"}');export{e as data};
