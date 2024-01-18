@@ -3,6 +3,7 @@ import { backToTopPlugin } from '@vuepress/plugin-back-to-top'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { clipboardPlugin } from 'vuepress-plugin-clipboard'
 export default {
+    dest: './dist',
     lang: 'zh-CN',
     locales: {
         "/": {
