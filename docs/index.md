@@ -3,23 +3,22 @@
 layout: home
 
 hero:
-  name: "My Awesome Project"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: "开发技术文档"
+  text: "前端与后端技术示例"
+  tagline: 展示各种前端和后端技术的使用示例
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: 前端示例
+      link: /frontend/react-example
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: 后端示例
+      link: /backend/nodejs-example
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 前端技术
+    details: 包含 React、Vue 等前端框架的使用示例
+  - title: 后端技术
+    details: 包含 Node.js、Python 等后端技术的使用示例
+  - title: 持续更新
+    details: 定期添加新的技术示例和最佳实践
 ---
-
